@@ -1,0 +1,935 @@
+2017-12-13 17:37:33 - // include directory, this will be replaced by the kernel
+2017-12-13 17:37:33 - #I "C:\\Users\\misadmin\\Desktop\\F sharp notebook"
+2017-12-13 17:37:33 - // load base dlls
+2017-12-13 17:37:33 - #r "IfSharp.Kernel.dll"
+2017-12-13 17:37:33 - #r "NetMQ.dll"
+2017-12-13 17:37:33 - // open the global functions and methods
+2017-12-13 17:37:33 - open IfSharp.Kernel
+2017-12-13 17:37:33 - open IfSharp.Kernel.Globals
+2017-12-13 17:37:39 - F# Interactive for F# 4.1
+2017-12-13 17:37:39 - Freely distributed under the Apache 2.0 Open Source License
+2017-12-13 17:37:39 - For help type #help;;
+2017-12-13 17:37:39 - > val it : ResizeArray<System.Type * (obj -> seq<string * string> * string)> =
+2017-12-13 17:37:39 -   seq []
+2017-12-13 17:37:39 - --> Added 'C:\Users\misadmin\Desktop\F sharp notebook' to library include path
+2017-12-13 17:37:39 - --> Referenced 'C:\Users\misadmin\Desktop\F sharp notebook\IfSharp.Kernel.dll' (file may be locked by F# Interactive process)
+2017-12-13 17:37:39 - --> Referenced 'C:\Users\misadmin\Desktop\F sharp notebook\NetMQ.dll' (file may be locked by F# Interactive process)
+2017-12-13 17:37:40 - Unknown content type on shell. msg_type is `comm_info_request`
+2017-12-14 15:45:52 - let isDivisible (dividend:int) (divisor:int) : int = 
+2017-12-14 15:45:52 -     if dividend % divisor = 0 then
+2017-12-14 15:45:52 -         dividend % divisor
+2017-12-14 15:45:52 -     else
+2017-12-14 15:45:52 -         0
+2017-12-14 15:45:52 - let test (maxInt:int) (num:int) : bool = 
+2017-12-14 15:45:52 -     if num <= maxInt/2 then 
+2017-12-14 15:45:52 -         true 
+2017-12-14 15:45:52 -     else 
+2017-12-14 15:45:52 -         false
+2017-12-14 15:45:52 - let filterList (maxInt:int) (data:list<int>) : list<int> =
+2017-12-14 15:45:52 -     List.filter (test maxInt) data 
+2017-12-14 15:45:52 - let helper1 (maxInt:int) (data:list<int>) : int =
+2017-12-14 15:45:52 -     data
+2017-12-14 15:45:52 -     |> List.map (isDivisible maxInt)
+2017-12-14 15:45:52 -     |> List.sum 
+2017-12-14 15:45:52 -     
+2017-12-14 15:45:52 - let folder ((answer, oldFilter):int*list<int>) (maxInt:int) : int*list<int> =
+2017-12-14 15:45:52 -     let newFilter = filterList maxInt oldFilter
+2017-12-14 15:45:52 -     
+2017-12-14 15:45:52 -     newFilter
+2017-12-14 15:45:52 -     |> (helper1 maxInt)
+2017-12-14 15:45:52 -     |> (fun (additional:int) : int*list<int> -> ((answer + additional), newFilter))
+2017-12-14 15:45:52 -     
+2017-12-14 15:45:52 - let solveRow (input:list<int>) : int = 
+2017-12-14 15:45:52 -     let startInt = input.Head
+2017-12-14 15:45:52 -     
+2017-12-14 15:45:52 -     input
+2017-12-14 15:45:52 -     |> List.fold folder (startInt, input) 
+2017-12-14 15:45:52 -     |> (fun (answer, _) -> answer)
+2017-12-14 15:45:52 -     
+2017-12-14 15:45:52 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 15:45:52 -     let dataCleaner (input:string) : list<list<int>> = 
+2017-12-14 15:45:52 -         input
+2017-12-14 15:45:52 -         |> stringSplit 
+2017-12-14 15:45:52 -         |> Array.toList
+2017-12-14 15:45:52 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 15:45:52 -         |> separateBy rows
+2017-12-14 15:45:52 -         |> List.map (List.sortDescending)
+2017-12-14 15:45:52 -         |> List.map solveRow 
+2017-12-14 15:45:52 -         |> List.sum 
+2017-12-14 15:45:52 - Unexpected symbol ':' in lambda expression. Expected '->' or other token.
+2017-12-14 15:45:52 - The block following this 'let' is unfinished. Every code block is an expression and must have a result. 'let' cannot be the final code element in a block. Consider giving this block an explicit result.
+2017-12-14 15:46:19 - let isDivisible (dividend:int) (divisor:int) : int = 
+2017-12-14 15:46:19 -     if dividend % divisor = 0 then
+2017-12-14 15:46:19 -         dividend % divisor
+2017-12-14 15:46:19 -     else
+2017-12-14 15:46:19 -         0
+2017-12-14 15:46:19 - let test (maxInt:int) (num:int) : bool = 
+2017-12-14 15:46:19 -     if num <= maxInt/2 then 
+2017-12-14 15:46:19 -         true 
+2017-12-14 15:46:19 -     else 
+2017-12-14 15:46:19 -         false
+2017-12-14 15:46:19 - let filterList (maxInt:int) (data:list<int>) : list<int> =
+2017-12-14 15:46:19 -     List.filter (test maxInt) data 
+2017-12-14 15:46:19 - let helper1 (maxInt:int) (data:list<int>) : int =
+2017-12-14 15:46:19 -     data
+2017-12-14 15:46:19 -     |> List.map (isDivisible maxInt)
+2017-12-14 15:46:19 -     |> List.sum 
+2017-12-14 15:46:19 -     
+2017-12-14 15:46:19 - let folder ((answer, oldFilter):int*list<int>) (maxInt:int) : int*list<int> =
+2017-12-14 15:46:19 -     let newFilter = filterList maxInt oldFilter
+2017-12-14 15:46:19 -     
+2017-12-14 15:46:19 -     newFilter
+2017-12-14 15:46:19 -     |> (helper1 maxInt)
+2017-12-14 15:46:19 -     |> (fun additional -> ((answer + additional), newFilter))
+2017-12-14 15:46:19 -     
+2017-12-14 15:46:19 - let solveRow (input:list<int>) : int = 
+2017-12-14 15:46:19 -     let startInt = input.Head
+2017-12-14 15:46:19 -     
+2017-12-14 15:46:19 -     input
+2017-12-14 15:46:19 -     |> List.fold folder (startInt, input) 
+2017-12-14 15:46:19 -     |> (fun (answer, _) -> answer)
+2017-12-14 15:46:19 -     
+2017-12-14 15:46:19 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 15:46:19 -     let dataCleaner (input:string) : list<list<int>> = 
+2017-12-14 15:46:19 -         input
+2017-12-14 15:46:19 -         |> stringSplit 
+2017-12-14 15:46:19 -         |> Array.toList
+2017-12-14 15:46:19 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 15:46:19 -         |> separateBy rows
+2017-12-14 15:46:19 -         |> List.map (List.sortDescending)
+2017-12-14 15:46:19 -         |> List.map solveRow 
+2017-12-14 15:46:19 -         |> List.sum 
+2017-12-14 15:46:19 - The block following this 'let' is unfinished. Every code block is an expression and must have a result. 'let' cannot be the final code element in a block. Consider giving this block an explicit result.
+2017-12-14 15:46:33 - let isDivisible (dividend:int) (divisor:int) : int = 
+2017-12-14 15:46:33 -     if dividend % divisor = 0 then
+2017-12-14 15:46:33 -         dividend % divisor
+2017-12-14 15:46:33 -     else
+2017-12-14 15:46:33 -         0
+2017-12-14 15:46:41 - let test (maxInt:int) (num:int) : bool = 
+2017-12-14 15:46:41 -     if num <= maxInt/2 then 
+2017-12-14 15:46:41 -         true 
+2017-12-14 15:46:41 -     else 
+2017-12-14 15:46:41 -         false
+2017-12-14 15:47:00 - let helper1 (maxInt:int) (data:list<int>) : int =
+2017-12-14 15:47:00 -     data
+2017-12-14 15:47:00 -     |> List.map (isDivisible maxInt)
+2017-12-14 15:47:00 -     |> List.sum 
+2017-12-14 15:47:06 -    
+2017-12-14 15:47:06 - let folder ((answer, oldFilter):int*list<int>) (maxInt:int) : int*list<int> =
+2017-12-14 15:47:06 -     let newFilter = filterList maxInt oldFilter
+2017-12-14 15:47:06 -     
+2017-12-14 15:47:06 -     newFilter
+2017-12-14 15:47:06 -     |> (helper1 maxInt)
+2017-12-14 15:47:06 -     |> (fun additional -> ((answer + additional), newFilter))
+2017-12-14 15:47:06 -     
+2017-12-14 15:47:06 - The value or constructor 'filterList' is not defined. Maybe you want one of the following:
+2017-12-14 15:47:06 -    File
+2017-12-14 15:47:28 - let filterList (maxInt:int) (data:list<int>) : list<int> =
+2017-12-14 15:47:28 -     List.filter (test maxInt) data 
+2017-12-14 15:47:35 -    
+2017-12-14 15:47:35 - let folder ((answer, oldFilter):int*list<int>) (maxInt:int) : int*list<int> =
+2017-12-14 15:47:35 -     let newFilter = filterList maxInt oldFilter
+2017-12-14 15:47:35 -     
+2017-12-14 15:47:35 -     newFilter
+2017-12-14 15:47:35 -     |> (helper1 maxInt)
+2017-12-14 15:47:35 -     |> (fun additional -> ((answer + additional), newFilter))
+2017-12-14 15:47:35 -     
+2017-12-14 15:47:38 - let solveRow (input:list<int>) : int = 
+2017-12-14 15:47:38 -     let startInt = input.Head
+2017-12-14 15:47:38 -     
+2017-12-14 15:47:38 -     input
+2017-12-14 15:47:38 -     |> List.fold folder (startInt, input) 
+2017-12-14 15:47:38 -     |> (fun (answer, _) -> answer)
+2017-12-14 15:47:41 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 15:47:41 -     let dataCleaner (input:string) : list<list<int>> = 
+2017-12-14 15:47:41 -         input
+2017-12-14 15:47:41 -         |> stringSplit 
+2017-12-14 15:47:41 -         |> Array.toList
+2017-12-14 15:47:41 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 15:47:41 -         |> separateBy rows
+2017-12-14 15:47:41 -         |> List.map (List.sortDescending)
+2017-12-14 15:47:41 -         |> List.map solveRow 
+2017-12-14 15:47:41 -         |> List.sum 
+2017-12-14 15:47:41 - The block following this 'let' is unfinished. Every code block is an expression and must have a result. 'let' cannot be the final code element in a block. Consider giving this block an explicit result.
+2017-12-14 15:48:09 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 15:48:09 -     let dataCleaner (input:string) : list<list<int>> = 
+2017-12-14 15:48:09 -         input
+2017-12-14 15:48:09 -         |> stringSplit 
+2017-12-14 15:48:09 -         |> Array.toList
+2017-12-14 15:48:09 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 15:48:09 -         |> separateBy rows
+2017-12-14 15:48:09 -         |> List.map (List.sortDescending)
+2017-12-14 15:48:09 -     
+2017-12-14 15:48:09 -     data
+2017-12-14 15:48:09 -         |> dataCleaner
+2017-12-14 15:48:09 -         |> List.map solveRow 
+2017-12-14 15:48:09 -         |> List.sum 
+2017-12-14 15:48:09 - The value or constructor 'stringSplit' is not defined. Maybe you want one of the following:
+2017-12-14 15:48:09 -    String
+2017-12-14 15:48:09 -    string
+2017-12-14 15:48:09 - The value or constructor 'separateBy' is not defined.
+2017-12-14 15:48:14 - open System
+2017-12-14 15:48:14 - let input = "121	59	141	21	120	67	58	49	22	46	56	112	53	111	104	130
+2017-12-14 15:48:14 - 1926	1910	760	2055	28	2242	146	1485	163	976	1842	1982	137	1387	162	789
+2017-12-14 15:48:14 - 4088	258	2060	1014	4420	177	4159	194	2794	4673	4092	681	174	2924	170	3548
+2017-12-14 15:48:14 - 191	407	253	192	207	425	580	231	197	382	404	472	164	571	500	216
+2017-12-14 15:48:14 - 4700	1161	168	5398	5227	5119	252	2552	4887	5060	1152	3297	847	4525	220	262
+2017-12-14 15:48:14 - 2417	992	1445	184	554	2940	209	2574	2262	1911	2923	204	2273	2760	506	157
+2017-12-14 15:48:14 - 644	155	638	78	385	408	152	360	588	618	313	126	172	220	217	161
+2017-12-14 15:48:14 - 227	1047	117	500	1445	222	29	913	190	791	230	1281	1385	226	856	1380
+2017-12-14 15:48:14 - 436	46	141	545	122	86	283	124	249	511	347	502	168	468	117	94
+2017-12-14 15:48:14 - 2949	3286	2492	2145	1615	159	663	1158	154	939	166	2867	141	324	2862	641
+2017-12-14 15:48:14 - 1394	151	90	548	767	1572	150	913	141	1646	154	1351	1506	1510	707	400
+2017-12-14 15:48:14 - 646	178	1228	1229	270	167	161	1134	193	1312	1428	131	1457	719	1288	989
+2017-12-14 15:48:14 - 1108	1042	93	140	822	124	1037	1075	125	941	1125	298	136	94	135	711
+2017-12-14 15:48:14 - 112	2429	1987	2129	2557	1827	477	100	78	634	352	1637	588	77	1624	2500
+2017-12-14 15:48:14 - 514	218	209	185	197	137	393	555	588	569	710	537	48	309	519	138
+2017-12-14 15:48:14 - 1567	3246	4194	151	3112	903	1575	134	150	4184	3718	4077	180	4307	4097	1705"
+2017-12-14 15:48:14 - let stringSplit (input:string) : string[] = 
+2017-12-14 15:48:14 -     input.Split()
+2017-12-14 15:48:14 - let rec separateBy (rowLength:int) (data: list<int>) : list<list<int>> = 
+2017-12-14 15:48:14 -     match data with
+2017-12-14 15:48:14 -     | [] -> []
+2017-12-14 15:48:14 -     | _ ->
+2017-12-14 15:48:14 -         let endPoint = rowLength - 1
+2017-12-14 15:48:14 -         let arrayHead = data.[0..endPoint] 
+2017-12-14 15:48:14 -         let arrayRest = data.[rowLength..]
+2017-12-14 15:48:14 -         
+2017-12-14 15:48:14 -         arrayHead :: (separateBy rowLength arrayRest)
+2017-12-14 15:48:14 - let rowDiffer (row : list<int>) : int = 
+2017-12-14 15:48:14 -     (Seq.max row) - (Seq.min row) 
+2017-12-14 15:48:14 - let adventOfCode2 (rows:int) (data:string) = 
+2017-12-14 15:48:14 -     data
+2017-12-14 15:48:14 -         |> stringSplit 
+2017-12-14 15:48:14 -         |> Array.toList
+2017-12-14 15:48:14 -         |> List.map (fun x -> System.Int32.Parse x) // turns string numbers to integers. A bit more resilient than 'int'
+2017-12-14 15:48:14 -         |> separateBy rows
+2017-12-14 15:48:14 -         |> Seq.sumBy rowDiffer
+2017-12-14 15:48:14 - adventOfCode2 16 input
+2017-12-14 15:48:14 - let isDivisible (dividend:int) (divisor:int) : int = 
+2017-12-14 15:48:14 -     if dividend % divisor = 0 then
+2017-12-14 15:48:14 -         dividend % divisor
+2017-12-14 15:48:14 -     else
+2017-12-14 15:48:14 -         0
+2017-12-14 15:48:14 - let test (maxInt:int) (num:int) : bool = 
+2017-12-14 15:48:14 -     if num <= maxInt/2 then 
+2017-12-14 15:48:14 -         true 
+2017-12-14 15:48:14 -     else 
+2017-12-14 15:48:14 -         false
+2017-12-14 15:48:14 - let filterList (maxInt:int) (data:list<int>) : list<int> =
+2017-12-14 15:48:14 -     List.filter (test maxInt) data 
+2017-12-14 15:48:14 - let helper1 (maxInt:int) (data:list<int>) : int =
+2017-12-14 15:48:14 -     data
+2017-12-14 15:48:14 -     |> List.map (isDivisible maxInt)
+2017-12-14 15:48:14 -     |> List.sum 
+2017-12-14 15:48:14 -    
+2017-12-14 15:48:14 - let folder ((answer, oldFilter):int*list<int>) (maxInt:int) : int*list<int> =
+2017-12-14 15:48:14 -     let newFilter = filterList maxInt oldFilter
+2017-12-14 15:48:14 -     
+2017-12-14 15:48:14 -     newFilter
+2017-12-14 15:48:14 -     |> (helper1 maxInt)
+2017-12-14 15:48:14 -     |> (fun additional -> ((answer + additional), newFilter))
+2017-12-14 15:48:14 -     
+2017-12-14 15:48:14 - let solveRow (input:list<int>) : int = 
+2017-12-14 15:48:14 -     let startInt = input.Head
+2017-12-14 15:48:14 -     
+2017-12-14 15:48:14 -     input
+2017-12-14 15:48:14 -     |> List.fold folder (startInt, input) 
+2017-12-14 15:48:14 -     |> (fun (answer, _) -> answer)
+2017-12-14 15:48:14 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 15:48:14 -     let dataCleaner (input:string) : list<list<int>> = 
+2017-12-14 15:48:14 -         input
+2017-12-14 15:48:14 -         |> stringSplit 
+2017-12-14 15:48:14 -         |> Array.toList
+2017-12-14 15:48:14 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 15:48:14 -         |> separateBy rows
+2017-12-14 15:48:14 -         |> List.map (List.sortDescending)
+2017-12-14 15:48:14 -     
+2017-12-14 15:48:14 -     data
+2017-12-14 15:48:14 -         |> dataCleaner
+2017-12-14 15:48:14 -         |> List.map solveRow 
+2017-12-14 15:48:14 -         |> List.sum 
+2017-12-14 15:49:07 - adventOdCode2Part2 fullInput
+2017-12-14 15:49:07 - The value or constructor 'adventOdCode2Part2' is not defined. Maybe you want one of the following:
+2017-12-14 15:49:07 -    adventOfCode2Part2
+2017-12-14 15:49:07 -    adventOfCode2
+2017-12-14 15:49:12 - adventOfCode2Part2 fullInput
+2017-12-14 15:49:12 - The value or constructor 'fullInput' is not defined.
+2017-12-14 15:49:16 - open System
+2017-12-14 15:49:16 - let fullInput = "121	59	141	21	120	67	58	49	22	46	56	112	53	111	104	130
+2017-12-14 15:49:16 - 1926	1910	760	2055	28	2242	146	1485	163	976	1842	1982	137	1387	162	789
+2017-12-14 15:49:16 - 4088	258	2060	1014	4420	177	4159	194	2794	4673	4092	681	174	2924	170	3548
+2017-12-14 15:49:16 - 191	407	253	192	207	425	580	231	197	382	404	472	164	571	500	216
+2017-12-14 15:49:16 - 4700	1161	168	5398	5227	5119	252	2552	4887	5060	1152	3297	847	4525	220	262
+2017-12-14 15:49:16 - 2417	992	1445	184	554	2940	209	2574	2262	1911	2923	204	2273	2760	506	157
+2017-12-14 15:49:16 - 644	155	638	78	385	408	152	360	588	618	313	126	172	220	217	161
+2017-12-14 15:49:16 - 227	1047	117	500	1445	222	29	913	190	791	230	1281	1385	226	856	1380
+2017-12-14 15:49:16 - 436	46	141	545	122	86	283	124	249	511	347	502	168	468	117	94
+2017-12-14 15:49:16 - 2949	3286	2492	2145	1615	159	663	1158	154	939	166	2867	141	324	2862	641
+2017-12-14 15:49:16 - 1394	151	90	548	767	1572	150	913	141	1646	154	1351	1506	1510	707	400
+2017-12-14 15:49:16 - 646	178	1228	1229	270	167	161	1134	193	1312	1428	131	1457	719	1288	989
+2017-12-14 15:49:16 - 1108	1042	93	140	822	124	1037	1075	125	941	1125	298	136	94	135	711
+2017-12-14 15:49:16 - 112	2429	1987	2129	2557	1827	477	100	78	634	352	1637	588	77	1624	2500
+2017-12-14 15:49:16 - 514	218	209	185	197	137	393	555	588	569	710	537	48	309	519	138
+2017-12-14 15:49:16 - 1567	3246	4194	151	3112	903	1575	134	150	4184	3718	4077	180	4307	4097	1705"
+2017-12-14 15:49:16 - let stringSplit (input:string) : string[] = 
+2017-12-14 15:49:16 -     input.Split()
+2017-12-14 15:49:16 - let rec separateBy (rowLength:int) (data: list<int>) : list<list<int>> = 
+2017-12-14 15:49:16 -     match data with
+2017-12-14 15:49:16 -     | [] -> []
+2017-12-14 15:49:16 -     | _ ->
+2017-12-14 15:49:16 -         let endPoint = rowLength - 1
+2017-12-14 15:49:16 -         let arrayHead = data.[0..endPoint] 
+2017-12-14 15:49:16 -         let arrayRest = data.[rowLength..]
+2017-12-14 15:49:16 -         
+2017-12-14 15:49:16 -         arrayHead :: (separateBy rowLength arrayRest)
+2017-12-14 15:49:16 - let rowDiffer (row : list<int>) : int = 
+2017-12-14 15:49:16 -     (Seq.max row) - (Seq.min row) 
+2017-12-14 15:49:16 - let adventOfCode2 (rows:int) (data:string) = 
+2017-12-14 15:49:16 -     data
+2017-12-14 15:49:16 -         |> stringSplit 
+2017-12-14 15:49:16 -         |> Array.toList
+2017-12-14 15:49:16 -         |> List.map (fun x -> System.Int32.Parse x) // turns string numbers to integers. A bit more resilient than 'int'
+2017-12-14 15:49:16 -         |> separateBy rows
+2017-12-14 15:49:16 -         |> Seq.sumBy rowDiffer
+2017-12-14 15:49:16 - adventOfCode2 16 fullInput
+2017-12-14 15:49:16 - let isDivisible (dividend:int) (divisor:int) : int = 
+2017-12-14 15:49:16 -     if dividend % divisor = 0 then
+2017-12-14 15:49:16 -         dividend % divisor
+2017-12-14 15:49:16 -     else
+2017-12-14 15:49:16 -         0
+2017-12-14 15:49:16 - let test (maxInt:int) (num:int) : bool = 
+2017-12-14 15:49:16 -     if num <= maxInt/2 then 
+2017-12-14 15:49:16 -         true 
+2017-12-14 15:49:16 -     else 
+2017-12-14 15:49:16 -         false
+2017-12-14 15:49:16 - let filterList (maxInt:int) (data:list<int>) : list<int> =
+2017-12-14 15:49:16 -     List.filter (test maxInt) data 
+2017-12-14 15:49:16 - let helper1 (maxInt:int) (data:list<int>) : int =
+2017-12-14 15:49:16 -     data
+2017-12-14 15:49:16 -     |> List.map (isDivisible maxInt)
+2017-12-14 15:49:16 -     |> List.sum 
+2017-12-14 15:49:16 -    
+2017-12-14 15:49:16 - let folder ((answer, oldFilter):int*list<int>) (maxInt:int) : int*list<int> =
+2017-12-14 15:49:16 -     let newFilter = filterList maxInt oldFilter
+2017-12-14 15:49:16 -     
+2017-12-14 15:49:16 -     newFilter
+2017-12-14 15:49:16 -     |> (helper1 maxInt)
+2017-12-14 15:49:16 -     |> (fun additional -> ((answer + additional), newFilter))
+2017-12-14 15:49:16 -     
+2017-12-14 15:49:16 - let solveRow (input:list<int>) : int = 
+2017-12-14 15:49:16 -     let startInt = input.Head
+2017-12-14 15:49:16 -     
+2017-12-14 15:49:16 -     input
+2017-12-14 15:49:16 -     |> List.fold folder (startInt, input) 
+2017-12-14 15:49:16 -     |> (fun (answer, _) -> answer)
+2017-12-14 15:49:16 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 15:49:16 -     let dataCleaner (input:string) : list<list<int>> = 
+2017-12-14 15:49:16 -         input
+2017-12-14 15:49:16 -         |> stringSplit 
+2017-12-14 15:49:16 -         |> Array.toList
+2017-12-14 15:49:16 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 15:49:16 -         |> separateBy rows
+2017-12-14 15:49:16 -         |> List.map (List.sortDescending)
+2017-12-14 15:49:16 -     
+2017-12-14 15:49:16 -     data
+2017-12-14 15:49:16 -         |> dataCleaner
+2017-12-14 15:49:16 -         |> List.map solveRow 
+2017-12-14 15:49:16 -         |> List.sum 
+2017-12-14 15:49:16 - adventOfCode2Part2 fullInput
+2017-12-14 15:49:16 - This expression was expected to have type
+2017-12-14 15:49:16 -     'int'    
+2017-12-14 15:49:16 - but here has type
+2017-12-14 15:49:16 -     'string'    
+2017-12-14 15:49:44 - adventOfCode2Part2 16 fullInput
+2017-12-14 15:51:32 - let dataCleaner (input:string) : list<list<int>> = 
+2017-12-14 15:51:32 -         input
+2017-12-14 15:51:32 -         |> stringSplit 
+2017-12-14 15:51:32 -         |> Array.toList
+2017-12-14 15:51:32 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 15:51:32 -         |> separateBy rows
+2017-12-14 15:51:32 -         |> List.map (List.sortDescending)
+2017-12-14 15:51:32 - The value or constructor 'rows' is not defined.
+2017-12-14 15:52:15 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 15:52:15 -     data
+2017-12-14 15:52:15 -         |> dataCleaner rows
+2017-12-14 15:52:15 -         |> List.map solveRow 
+2017-12-14 15:52:15 -         |> List.sum 
+2017-12-14 15:52:15 - The value or constructor 'dataCleaner' is not defined. Maybe you want one of the following:
+2017-12-14 15:52:15 -    Data
+2017-12-14 15:52:15 -    data
+2017-12-14 15:52:17 - let dataCleaner (rows:int) (input:string) : list<list<int>> = 
+2017-12-14 15:52:17 -         input
+2017-12-14 15:52:17 -         |> stringSplit 
+2017-12-14 15:52:17 -         |> Array.toList
+2017-12-14 15:52:17 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 15:52:17 -         |> separateBy rows
+2017-12-14 15:52:17 -         |> List.map (List.sortDescending)
+2017-12-14 15:52:20 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 15:52:20 -     data
+2017-12-14 15:52:20 -         |> dataCleaner rows
+2017-12-14 15:52:20 -         |> List.map solveRow 
+2017-12-14 15:52:20 -         |> List.sum 
+2017-12-14 15:52:30 - dataCleaner 16 fullInput
+2017-12-14 15:53:06 - List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 15:53:31 - open System
+2017-12-14 15:53:31 - let fullInput = "121	59	141	21	120	67	58	49	22	46	56	112	53	111	104	130
+2017-12-14 15:53:31 - 1926	1910	760	2055	28	2242	146	1485	163	976	1842	1982	137	1387	162	789
+2017-12-14 15:53:31 - 4088	258	2060	1014	4420	177	4159	194	2794	4673	4092	681	174	2924	170	3548
+2017-12-14 15:53:31 - 191	407	253	192	207	425	580	231	197	382	404	472	164	571	500	216
+2017-12-14 15:53:31 - 4700	1161	168	5398	5227	5119	252	2552	4887	5060	1152	3297	847	4525	220	262
+2017-12-14 15:53:31 - 2417	992	1445	184	554	2940	209	2574	2262	1911	2923	204	2273	2760	506	157
+2017-12-14 15:53:31 - 644	155	638	78	385	408	152	360	588	618	313	126	172	220	217	161
+2017-12-14 15:53:31 - 227	1047	117	500	1445	222	29	913	190	791	230	1281	1385	226	856	1380
+2017-12-14 15:53:31 - 436	46	141	545	122	86	283	124	249	511	347	502	168	468	117	94
+2017-12-14 15:53:31 - 2949	3286	2492	2145	1615	159	663	1158	154	939	166	2867	141	324	2862	641
+2017-12-14 15:53:31 - 1394	151	90	548	767	1572	150	913	141	1646	154	1351	1506	1510	707	400
+2017-12-14 15:53:31 - 646	178	1228	1229	270	167	161	1134	193	1312	1428	131	1457	719	1288	989
+2017-12-14 15:53:31 - 1108	1042	93	140	822	124	1037	1075	125	941	1125	298	136	94	135	711
+2017-12-14 15:53:31 - 112	2429	1987	2129	2557	1827	477	100	78	634	352	1637	588	77	1624	2500
+2017-12-14 15:53:31 - 514	218	209	185	197	137	393	555	588	569	710	537	48	309	519	138
+2017-12-14 15:53:31 - 1567	3246	4194	151	3112	903	1575	134	150	4184	3718	4077	180	4307	4097	1705"
+2017-12-14 15:53:31 - let stringSplit (input:string) : string[] = 
+2017-12-14 15:53:31 -     input.Split()
+2017-12-14 15:53:31 - let rec separateBy (rowLength:int) (data: list<int>) : list<list<int>> = 
+2017-12-14 15:53:31 -     match data with
+2017-12-14 15:53:31 -     | [] -> []
+2017-12-14 15:53:31 -     | _ ->
+2017-12-14 15:53:31 -         let endPoint = rowLength - 1
+2017-12-14 15:53:31 -         let arrayHead = data.[0..endPoint] 
+2017-12-14 15:53:31 -         let arrayRest = data.[rowLength..]
+2017-12-14 15:53:31 -         
+2017-12-14 15:53:31 -         arrayHead :: (separateBy rowLength arrayRest)
+2017-12-14 15:53:31 - let rowDiffer (row : list<int>) : int = 
+2017-12-14 15:53:31 -     (Seq.max row) - (Seq.min row) 
+2017-12-14 15:53:31 - let adventOfCode2 (rows:int) (data:string) = 
+2017-12-14 15:53:31 -     data
+2017-12-14 15:53:31 -         |> stringSplit 
+2017-12-14 15:53:31 -         |> Array.toList
+2017-12-14 15:53:31 -         |> List.map (fun x -> System.Int32.Parse x) // turns string numbers to integers. A bit more resilient than 'int'
+2017-12-14 15:53:31 -         |> separateBy rows
+2017-12-14 15:53:31 -         |> Seq.sumBy rowDiffer
+2017-12-14 15:53:31 - adventOfCode2 16 fullInput
+2017-12-14 15:53:31 - let isDivisible (dividend:int) (divisor:int) : int = 
+2017-12-14 15:53:31 -     if dividend % divisor = 0 then
+2017-12-14 15:53:31 -         (dividend % divisor)
+2017-12-14 15:53:31 -     else
+2017-12-14 15:53:31 -         0
+2017-12-14 15:53:31 - let test (maxInt:int) (num:int) : bool = 
+2017-12-14 15:53:31 -     if num <= maxInt/2 then 
+2017-12-14 15:53:31 -         true 
+2017-12-14 15:53:31 -     else 
+2017-12-14 15:53:31 -         false
+2017-12-14 15:53:31 - let filterList (maxInt:int) (data:list<int>) : list<int> =
+2017-12-14 15:53:31 -     List.filter (test maxInt) data 
+2017-12-14 15:53:32 - let helper1 (maxInt:int) (data:list<int>) : int =
+2017-12-14 15:53:32 -     data
+2017-12-14 15:53:32 -     |> List.map (isDivisible maxInt)
+2017-12-14 15:53:32 -     |> List.sum 
+2017-12-14 15:53:32 -    
+2017-12-14 15:53:32 - let folder ((answer, oldFilter):int*list<int>) (maxInt:int) : int*list<int> =
+2017-12-14 15:53:32 -     let newFilter = filterList maxInt oldFilter
+2017-12-14 15:53:32 -     
+2017-12-14 15:53:32 -     newFilter
+2017-12-14 15:53:32 -     |> (helper1 maxInt)
+2017-12-14 15:53:32 -     |> (fun additional -> ((answer + additional), newFilter))
+2017-12-14 15:53:32 -     
+2017-12-14 15:53:32 - let solveRow (input:list<int>) : int = 
+2017-12-14 15:53:32 -     let startInt = input.Head
+2017-12-14 15:53:32 -     
+2017-12-14 15:53:32 -     input
+2017-12-14 15:53:32 -     |> List.fold folder (startInt, input) 
+2017-12-14 15:53:32 -     |> (fun (answer, _) -> answer)
+2017-12-14 15:53:32 - let dataCleaner (rows:int) (input:string) : list<list<int>> = 
+2017-12-14 15:53:32 -         input
+2017-12-14 15:53:32 -         |> stringSplit 
+2017-12-14 15:53:32 -         |> Array.toList
+2017-12-14 15:53:32 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 15:53:32 -         |> separateBy rows
+2017-12-14 15:53:32 -         |> List.map (List.sortDescending)
+2017-12-14 15:53:32 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 15:53:32 -     data
+2017-12-14 15:53:32 -         |> dataCleaner rows
+2017-12-14 15:53:32 -         |> List.map solveRow 
+2017-12-14 15:53:32 -         |> List.sum 
+2017-12-14 15:53:32 - List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 15:54:10 - dataCleaner 16 fullInput
+2017-12-14 15:54:24 - List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 15:55:54 - open System
+2017-12-14 15:55:54 - let fullInput = "121	59	141	21	120	67	58	49	22	46	56	112	53	111	104	130
+2017-12-14 15:55:54 - 1926	1910	760	2055	28	2242	146	1485	163	976	1842	1982	137	1387	162	789
+2017-12-14 15:55:54 - 4088	258	2060	1014	4420	177	4159	194	2794	4673	4092	681	174	2924	170	3548
+2017-12-14 15:55:54 - 191	407	253	192	207	425	580	231	197	382	404	472	164	571	500	216
+2017-12-14 15:55:54 - 4700	1161	168	5398	5227	5119	252	2552	4887	5060	1152	3297	847	4525	220	262
+2017-12-14 15:55:54 - 2417	992	1445	184	554	2940	209	2574	2262	1911	2923	204	2273	2760	506	157
+2017-12-14 15:55:54 - 644	155	638	78	385	408	152	360	588	618	313	126	172	220	217	161
+2017-12-14 15:55:54 - 227	1047	117	500	1445	222	29	913	190	791	230	1281	1385	226	856	1380
+2017-12-14 15:55:54 - 436	46	141	545	122	86	283	124	249	511	347	502	168	468	117	94
+2017-12-14 15:55:54 - 2949	3286	2492	2145	1615	159	663	1158	154	939	166	2867	141	324	2862	641
+2017-12-14 15:55:54 - 1394	151	90	548	767	1572	150	913	141	1646	154	1351	1506	1510	707	400
+2017-12-14 15:55:54 - 646	178	1228	1229	270	167	161	1134	193	1312	1428	131	1457	719	1288	989
+2017-12-14 15:55:54 - 1108	1042	93	140	822	124	1037	1075	125	941	1125	298	136	94	135	711
+2017-12-14 15:55:54 - 112	2429	1987	2129	2557	1827	477	100	78	634	352	1637	588	77	1624	2500
+2017-12-14 15:55:54 - 514	218	209	185	197	137	393	555	588	569	710	537	48	309	519	138
+2017-12-14 15:55:54 - 1567	3246	4194	151	3112	903	1575	134	150	4184	3718	4077	180	4307	4097	1705"
+2017-12-14 15:55:54 - let stringSplit (input:string) : string[] = 
+2017-12-14 15:55:54 -     input.Split()
+2017-12-14 15:55:54 - let rec separateBy (rowLength:int) (data: list<int>) : list<list<int>> = 
+2017-12-14 15:55:54 -     match data with
+2017-12-14 15:55:54 -     | [] -> []
+2017-12-14 15:55:54 -     | _ ->
+2017-12-14 15:55:54 -         let endPoint = rowLength - 1
+2017-12-14 15:55:54 -         let arrayHead = data.[0..endPoint] 
+2017-12-14 15:55:54 -         let arrayRest = data.[rowLength..]
+2017-12-14 15:55:54 -         
+2017-12-14 15:55:54 -         arrayHead :: (separateBy rowLength arrayRest)
+2017-12-14 15:55:54 - let rowDiffer (row : list<int>) : int = 
+2017-12-14 15:55:54 -     (Seq.max row) - (Seq.min row) 
+2017-12-14 15:55:54 - let adventOfCode2 (rows:int) (data:string) = 
+2017-12-14 15:55:54 -     data
+2017-12-14 15:55:54 -         |> stringSplit 
+2017-12-14 15:55:54 -         |> Array.toList
+2017-12-14 15:55:54 -         |> List.map (fun x -> System.Int32.Parse x) // turns string numbers to integers. A bit more resilient than 'int'
+2017-12-14 15:55:54 -         |> separateBy rows
+2017-12-14 15:55:54 -         |> Seq.sumBy rowDiffer
+2017-12-14 15:55:54 - adventOfCode2 16 fullInput
+2017-12-14 15:55:54 - let isDivisible (dividend:int) (divisor:int) : int = 
+2017-12-14 15:55:54 -     if dividend % divisor = 0 then
+2017-12-14 15:55:54 -         (dividend / divisor)
+2017-12-14 15:55:54 -     else
+2017-12-14 15:55:54 -         0
+2017-12-14 15:55:54 - let test (maxInt:int) (num:int) : bool = 
+2017-12-14 15:55:54 -     if num <= maxInt/2 then 
+2017-12-14 15:55:54 -         true 
+2017-12-14 15:55:54 -     else 
+2017-12-14 15:55:54 -         false
+2017-12-14 15:55:54 - let filterList (maxInt:int) (data:list<int>) : list<int> =
+2017-12-14 15:55:54 -     List.filter (test maxInt) data 
+2017-12-14 15:55:54 - let helper1 (maxInt:int) (data:list<int>) : int =
+2017-12-14 15:55:54 -     data
+2017-12-14 15:55:54 -     |> List.map (isDivisible maxInt)
+2017-12-14 15:55:54 -     |> List.sum 
+2017-12-14 15:55:54 -    
+2017-12-14 15:55:54 - let folder ((answer, oldFilter):int*list<int>) (maxInt:int) : int*list<int> =
+2017-12-14 15:55:54 -     let newFilter = filterList maxInt oldFilter
+2017-12-14 15:55:54 -     
+2017-12-14 15:55:54 -     newFilter
+2017-12-14 15:55:54 -     |> (helper1 maxInt)
+2017-12-14 15:55:54 -     |> (fun additional -> ((answer + additional), newFilter))
+2017-12-14 15:55:54 -     
+2017-12-14 15:55:54 - let solveRow (input:list<int>) : int = 
+2017-12-14 15:55:54 -     let startInt = input.Head
+2017-12-14 15:55:54 -     
+2017-12-14 15:55:54 -     input
+2017-12-14 15:55:54 -     |> List.fold folder (startInt, input) 
+2017-12-14 15:55:54 -     |> (fun (answer, _) -> answer)
+2017-12-14 15:55:55 - let dataCleaner (rows:int) (input:string) : list<list<int>> = 
+2017-12-14 15:55:55 -         input
+2017-12-14 15:55:55 -         |> stringSplit 
+2017-12-14 15:55:55 -         |> Array.toList
+2017-12-14 15:55:55 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 15:55:55 -         |> separateBy rows
+2017-12-14 15:55:55 -         |> List.map (List.sortDescending)
+2017-12-14 15:55:55 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 15:55:55 -     data
+2017-12-14 15:55:55 -         |> dataCleaner rows
+2017-12-14 15:55:55 -         |> List.map solveRow 
+2017-12-14 15:55:55 -         |> List.sum 
+2017-12-14 15:55:55 - List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 15:57:14 - //List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 15:57:14 - //dataCleaner 16 fullInput
+2017-12-14 15:57:14 - isDivisible 8 4
+2017-12-14 15:57:18 - //List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 15:57:18 - //dataCleaner 16 fullInput
+2017-12-14 15:57:18 - isDivisible 8 5
+2017-12-14 15:57:23 - //List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 15:57:23 - //dataCleaner 16 fullInput
+2017-12-14 15:57:23 - isDivisible 8 8
+2017-12-14 15:57:29 - //List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 15:57:29 - //dataCleaner 16 fullInput
+2017-12-14 15:57:29 - isDivisible 8 24
+2017-12-14 15:58:14 - //List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 15:58:14 - //dataCleaner 16 fullInput
+2017-12-14 15:58:14 - //isDivisible 8 24
+2017-12-14 15:58:14 - filterList 12 [1;2;3;4;5;6;7;8]
+2017-12-14 15:58:26 - //List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 15:58:26 - //dataCleaner 16 fullInput
+2017-12-14 15:58:26 - //isDivisible 8 24
+2017-12-14 15:58:26 - filterList 4 [1;2;3;4;5;6;7;8]
+2017-12-14 15:58:33 - //List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 15:58:33 - //dataCleaner 16 fullInput
+2017-12-14 15:58:33 - //isDivisible 8 24
+2017-12-14 15:58:33 - filterList 11 [1;2;3;4;5;6;7;8]
+2017-12-14 16:00:21 - //List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 16:00:21 - (dataCleaner 16 fullInput) |> List.head |> solveRow
+2017-12-14 16:00:21 - //isDivisible 8 24
+2017-12-14 16:00:21 - //filterList 11 [1;2;3;4;5;6;7;8]
+2017-12-14 16:02:24 - //List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 16:02:24 - (dataCleaner 16 fullInput) |> List.head |> (helper1 141)
+2017-12-14 16:02:24 - //isDivisible 8 24
+2017-12-14 16:02:24 - //filterList 11 [1;2;3;4;5;6;7;8]
+2017-12-14 16:04:24 - //List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 16:04:24 - //(dataCleaner 16 fullInput) |> List.head |> (helper1 141)
+2017-12-14 16:04:24 - //isDivisible 8 24
+2017-12-14 16:04:24 - //filterList 11 [1;2;3;4;5;6;7;8]
+2017-12-14 16:04:24 - adventOfCode2Part2 16 fullInput
+2017-12-14 16:04:28 - open System
+2017-12-14 16:04:28 - let fullInput = "121	59	141	21	120	67	58	49	22	46	56	112	53	111	104	130
+2017-12-14 16:04:28 - 1926	1910	760	2055	28	2242	146	1485	163	976	1842	1982	137	1387	162	789
+2017-12-14 16:04:28 - 4088	258	2060	1014	4420	177	4159	194	2794	4673	4092	681	174	2924	170	3548
+2017-12-14 16:04:28 - 191	407	253	192	207	425	580	231	197	382	404	472	164	571	500	216
+2017-12-14 16:04:28 - 4700	1161	168	5398	5227	5119	252	2552	4887	5060	1152	3297	847	4525	220	262
+2017-12-14 16:04:28 - 2417	992	1445	184	554	2940	209	2574	2262	1911	2923	204	2273	2760	506	157
+2017-12-14 16:04:28 - 644	155	638	78	385	408	152	360	588	618	313	126	172	220	217	161
+2017-12-14 16:04:28 - 227	1047	117	500	1445	222	29	913	190	791	230	1281	1385	226	856	1380
+2017-12-14 16:04:28 - 436	46	141	545	122	86	283	124	249	511	347	502	168	468	117	94
+2017-12-14 16:04:28 - 2949	3286	2492	2145	1615	159	663	1158	154	939	166	2867	141	324	2862	641
+2017-12-14 16:04:28 - 1394	151	90	548	767	1572	150	913	141	1646	154	1351	1506	1510	707	400
+2017-12-14 16:04:28 - 646	178	1228	1229	270	167	161	1134	193	1312	1428	131	1457	719	1288	989
+2017-12-14 16:04:28 - 1108	1042	93	140	822	124	1037	1075	125	941	1125	298	136	94	135	711
+2017-12-14 16:04:28 - 112	2429	1987	2129	2557	1827	477	100	78	634	352	1637	588	77	1624	2500
+2017-12-14 16:04:28 - 514	218	209	185	197	137	393	555	588	569	710	537	48	309	519	138
+2017-12-14 16:04:28 - 1567	3246	4194	151	3112	903	1575	134	150	4184	3718	4077	180	4307	4097	1705"
+2017-12-14 16:04:28 - let stringSplit (input:string) : string[] = 
+2017-12-14 16:04:28 -     input.Split()
+2017-12-14 16:04:28 - let rec separateBy (rowLength:int) (data: list<int>) : list<list<int>> = 
+2017-12-14 16:04:28 -     match data with
+2017-12-14 16:04:28 -     | [] -> []
+2017-12-14 16:04:28 -     | _ ->
+2017-12-14 16:04:28 -         let endPoint = rowLength - 1
+2017-12-14 16:04:28 -         let arrayHead = data.[0..endPoint] 
+2017-12-14 16:04:28 -         let arrayRest = data.[rowLength..]
+2017-12-14 16:04:28 -         
+2017-12-14 16:04:28 -         arrayHead :: (separateBy rowLength arrayRest)
+2017-12-14 16:04:28 - let rowDiffer (row : list<int>) : int = 
+2017-12-14 16:04:28 -     (Seq.max row) - (Seq.min row) 
+2017-12-14 16:04:28 - let adventOfCode2 (rows:int) (data:string) = 
+2017-12-14 16:04:28 -     data
+2017-12-14 16:04:28 -         |> stringSplit 
+2017-12-14 16:04:28 -         |> Array.toList
+2017-12-14 16:04:28 -         |> List.map (fun x -> System.Int32.Parse x) // turns string numbers to integers. A bit more resilient than 'int'
+2017-12-14 16:04:28 -         |> separateBy rows
+2017-12-14 16:04:28 -         |> Seq.sumBy rowDiffer
+2017-12-14 16:04:28 - adventOfCode2 16 fullInput
+2017-12-14 16:04:28 - let isDivisible (dividend:int) (divisor:int) : int = 
+2017-12-14 16:04:28 -     if dividend % divisor = 0 then
+2017-12-14 16:04:28 -         (dividend / divisor)
+2017-12-14 16:04:28 -     else
+2017-12-14 16:04:28 -         0
+2017-12-14 16:04:28 - let test (maxInt:int) (num:int) : bool = 
+2017-12-14 16:04:28 -     if num <= maxInt/2 then 
+2017-12-14 16:04:28 -         true 
+2017-12-14 16:04:28 -     else 
+2017-12-14 16:04:28 -         false
+2017-12-14 16:04:28 - let filterList (maxInt:int) (data:list<int>) : list<int> =
+2017-12-14 16:04:28 -     List.filter (test maxInt) data 
+2017-12-14 16:04:28 - let helper1 (maxInt:int) (data:list<int>) : int =
+2017-12-14 16:04:28 -     data
+2017-12-14 16:04:28 -     |> List.map (isDivisible maxInt)
+2017-12-14 16:04:28 -     |> List.sum 
+2017-12-14 16:04:28 -    
+2017-12-14 16:04:28 - let folder ((answer, oldFilter):int*list<int>) (maxInt:int) : int*list<int> =
+2017-12-14 16:04:28 -     let newFilter = filterList maxInt oldFilter
+2017-12-14 16:04:28 -     
+2017-12-14 16:04:28 -     newFilter
+2017-12-14 16:04:28 -     |> (helper1 maxInt)
+2017-12-14 16:04:28 -     |> (fun additional -> ((answer + additional), newFilter))
+2017-12-14 16:04:28 -     
+2017-12-14 16:04:28 - let solveRow (input:list<int>) : int = 
+2017-12-14 16:04:28 -     let startInt = input.Head
+2017-12-14 16:04:28 -     
+2017-12-14 16:04:28 -     input
+2017-12-14 16:04:28 -     |> List.fold folder (0, input) 
+2017-12-14 16:04:28 -     |> (fun (answer, _) -> answer)
+2017-12-14 16:04:28 - let dataCleaner (rows:int) (input:string) : list<list<int>> = 
+2017-12-14 16:04:28 -         input
+2017-12-14 16:04:28 -         |> stringSplit 
+2017-12-14 16:04:28 -         |> Array.toList
+2017-12-14 16:04:28 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 16:04:28 -         |> separateBy rows
+2017-12-14 16:04:28 -         |> List.map (List.sortDescending)
+2017-12-14 16:04:28 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 16:04:28 -     data
+2017-12-14 16:04:28 -         |> dataCleaner rows
+2017-12-14 16:04:28 -         |> List.map solveRow 
+2017-12-14 16:04:28 -         |> List.sum 
+2017-12-14 16:04:28 - //List.map solveRow (dataCleaner 16 fullInput)
+2017-12-14 16:04:28 - //(dataCleaner 16 fullInput) |> List.head |> (helper1 141)
+2017-12-14 16:04:28 - //isDivisible 8 24
+2017-12-14 16:04:28 - //filterList 11 [1;2;3;4;5;6;7;8]
+2017-12-14 16:04:28 - adventOfCode2Part2 16 fullInput
+2017-12-14 16:05:28 - let divideFactors (dividend:int) (divisor:int) : int = 
+2017-12-14 16:05:28 -     if dividend % divisor = 0 then
+2017-12-14 16:05:28 -         (dividend / divisor)
+2017-12-14 16:05:28 -     else
+2017-12-14 16:05:28 -         0
+2017-12-14 16:25:52 - let dataCleaner (rows:int) (input:string) : list<list<int>> = 
+2017-12-14 16:25:52 -         input
+2017-12-14 16:25:52 -         |> stringSplit 
+2017-12-14 16:25:52 -         |> Array.toList
+2017-12-14 16:25:52 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 16:25:52 -         |> separateBy rows
+2017-12-14 16:25:52 -         
+2017-12-14 16:25:52 - dataCleaner 16 fullInput
+2017-12-14 16:33:18 - let adventOfCode2 (rows:int) (data:string) = 
+2017-12-14 16:33:18 -     data
+2017-12-14 16:33:18 -         |> dataCleaner rows
+2017-12-14 16:33:18 -         |> Seq.sumBy rowDiffer
+2017-12-14 16:33:18 - adventOfCode2 16 fullInput
+2017-12-14 16:33:24 - open System
+2017-12-14 16:33:24 - let fullInput = "121	59	141	21	120	67	58	49	22	46	56	112	53	111	104	130
+2017-12-14 16:33:24 - 1926	1910	760	2055	28	2242	146	1485	163	976	1842	1982	137	1387	162	789
+2017-12-14 16:33:24 - 4088	258	2060	1014	4420	177	4159	194	2794	4673	4092	681	174	2924	170	3548
+2017-12-14 16:33:24 - 191	407	253	192	207	425	580	231	197	382	404	472	164	571	500	216
+2017-12-14 16:33:24 - 4700	1161	168	5398	5227	5119	252	2552	4887	5060	1152	3297	847	4525	220	262
+2017-12-14 16:33:24 - 2417	992	1445	184	554	2940	209	2574	2262	1911	2923	204	2273	2760	506	157
+2017-12-14 16:33:24 - 644	155	638	78	385	408	152	360	588	618	313	126	172	220	217	161
+2017-12-14 16:33:24 - 227	1047	117	500	1445	222	29	913	190	791	230	1281	1385	226	856	1380
+2017-12-14 16:33:24 - 436	46	141	545	122	86	283	124	249	511	347	502	168	468	117	94
+2017-12-14 16:33:24 - 2949	3286	2492	2145	1615	159	663	1158	154	939	166	2867	141	324	2862	641
+2017-12-14 16:33:24 - 1394	151	90	548	767	1572	150	913	141	1646	154	1351	1506	1510	707	400
+2017-12-14 16:33:24 - 646	178	1228	1229	270	167	161	1134	193	1312	1428	131	1457	719	1288	989
+2017-12-14 16:33:24 - 1108	1042	93	140	822	124	1037	1075	125	941	1125	298	136	94	135	711
+2017-12-14 16:33:24 - 112	2429	1987	2129	2557	1827	477	100	78	634	352	1637	588	77	1624	2500
+2017-12-14 16:33:24 - 514	218	209	185	197	137	393	555	588	569	710	537	48	309	519	138
+2017-12-14 16:33:24 - 1567	3246	4194	151	3112	903	1575	134	150	4184	3718	4077	180	4307	4097	1705"
+2017-12-14 16:33:24 - let stringSplit (input:string) : string[] = 
+2017-12-14 16:33:24 -     input.Split()
+2017-12-14 16:33:24 - let rec separateBy (rowLength:int) (data: list<int>) : list<list<int>> = 
+2017-12-14 16:33:24 -     match data with
+2017-12-14 16:33:24 -     | [] -> []
+2017-12-14 16:33:24 -     | _ ->
+2017-12-14 16:33:24 -         let endPoint = rowLength - 1
+2017-12-14 16:33:24 -         let arrayHead = data.[0..endPoint] 
+2017-12-14 16:33:24 -         let arrayRest = data.[rowLength..]
+2017-12-14 16:33:24 -         
+2017-12-14 16:33:24 -         arrayHead :: (separateBy rowLength arrayRest)
+2017-12-14 16:33:24 - let dataCleaner (rows:int) (input:string) : list<list<int>> = 
+2017-12-14 16:33:24 -     input
+2017-12-14 16:33:24 -         |> stringSplit 
+2017-12-14 16:33:24 -         |> Array.toList
+2017-12-14 16:33:24 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 16:33:24 -         |> separateBy rows
+2017-12-14 16:33:24 -         
+2017-12-14 16:33:24 - dataCleaner 16 fullInput
+2017-12-14 16:33:24 - let rowDiffer (row : list<int>) : int = 
+2017-12-14 16:33:24 -     (Seq.max row) - (Seq.min row) 
+2017-12-14 16:33:24 - let adventOfCode2 (rows:int) (data:string) = 
+2017-12-14 16:33:24 -     data
+2017-12-14 16:33:24 -         |> dataCleaner rows
+2017-12-14 16:33:24 -         |> Seq.sumBy rowDiffer
+2017-12-14 16:33:24 - adventOfCode2 16 fullInput
+2017-12-14 16:33:24 - let divideFactors (dividend:int) (divisor:int) : int = 
+2017-12-14 16:33:24 -     if dividend % divisor = 0 then
+2017-12-14 16:33:24 -         (dividend / divisor)
+2017-12-14 16:33:24 -     else
+2017-12-14 16:33:24 -         0
+2017-12-14 16:33:24 - let potentialFactor (maxInt:int) (num:int) : bool = 
+2017-12-14 16:33:24 -     if num <= maxInt/2 then 
+2017-12-14 16:33:24 -         true 
+2017-12-14 16:33:24 -     else 
+2017-12-14 16:33:24 -         false
+2017-12-14 16:33:24 - let filterList (maxInt:int) (data:list<int>) : list<int> =
+2017-12-14 16:33:24 -     List.filter (potentialFactor maxInt) data 
+2017-12-14 16:33:24 - let helper1 (maxInt:int) (data:list<int>) : int =
+2017-12-14 16:33:24 -     data
+2017-12-14 16:33:24 -     |> List.map (divideFactors maxInt)
+2017-12-14 16:33:24 -     |> List.sum 
+2017-12-14 16:33:24 -    
+2017-12-14 16:33:24 - let folder ((answer, oldFilter):int*list<int>) (maxInt:int) : int*list<int> =
+2017-12-14 16:33:24 -     let newFilter = filterList maxInt oldFilter
+2017-12-14 16:33:24 -     
+2017-12-14 16:33:24 -     newFilter
+2017-12-14 16:33:24 -     |> (helper1 maxInt)
+2017-12-14 16:33:24 -     |> (fun additional -> ((answer + additional), newFilter))
+2017-12-14 16:33:24 -     
+2017-12-14 16:33:24 - let solveRow (input:list<int>) : int = 
+2017-12-14 16:33:24 -     let startInt = input.Head
+2017-12-14 16:33:24 -     
+2017-12-14 16:33:24 -     input
+2017-12-14 16:33:24 -     |> List.fold folder (0, input) 
+2017-12-14 16:33:24 -     |> (fun (answer, _) -> answer)
+2017-12-14 16:33:24 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 16:33:24 -     data
+2017-12-14 16:33:24 -         |> dataCleaner rows
+2017-12-14 16:33:24 -         |> List.map (List.sortDescending)
+2017-12-14 16:33:24 -         |> List.map solveRow 
+2017-12-14 16:33:24 -         |> List.sum 
+2017-12-14 16:33:24 - adventOfCode2Part2 16 fullInput
+2017-12-14 18:13:45 - open System
+2017-12-14 18:13:45 - let fullInput = "121	59	141	21	120	67	58	49	22	46	56	112	53	111	104	130
+2017-12-14 18:13:45 - 1926	1910	760	2055	28	2242	146	1485	163	976	1842	1982	137	1387	162	789
+2017-12-14 18:13:45 - 4088	258	2060	1014	4420	177	4159	194	2794	4673	4092	681	174	2924	170	3548
+2017-12-14 18:13:45 - 191	407	253	192	207	425	580	231	197	382	404	472	164	571	500	216
+2017-12-14 18:13:45 - 4700	1161	168	5398	5227	5119	252	2552	4887	5060	1152	3297	847	4525	220	262
+2017-12-14 18:13:45 - 2417	992	1445	184	554	2940	209	2574	2262	1911	2923	204	2273	2760	506	157
+2017-12-14 18:13:45 - 644	155	638	78	385	408	152	360	588	618	313	126	172	220	217	161
+2017-12-14 18:13:45 - 227	1047	117	500	1445	222	29	913	190	791	230	1281	1385	226	856	1380
+2017-12-14 18:13:45 - 436	46	141	545	122	86	283	124	249	511	347	502	168	468	117	94
+2017-12-14 18:13:45 - 2949	3286	2492	2145	1615	159	663	1158	154	939	166	2867	141	324	2862	641
+2017-12-14 18:13:45 - 1394	151	90	548	767	1572	150	913	141	1646	154	1351	1506	1510	707	400
+2017-12-14 18:13:45 - 646	178	1228	1229	270	167	161	1134	193	1312	1428	131	1457	719	1288	989
+2017-12-14 18:13:45 - 1108	1042	93	140	822	124	1037	1075	125	941	1125	298	136	94	135	711
+2017-12-14 18:13:45 - 112	2429	1987	2129	2557	1827	477	100	78	634	352	1637	588	77	1624	2500
+2017-12-14 18:13:45 - 514	218	209	185	197	137	393	555	588	569	710	537	48	309	519	138
+2017-12-14 18:13:45 - 1567	3246	4194	151	3112	903	1575	134	150	4184	3718	4077	180	4307	4097	1705"
+2017-12-14 18:13:45 - let stringSplit (input:string) : string[] = 
+2017-12-14 18:13:45 -     input.Split()
+2017-12-14 18:13:45 - let rec separateBy (rowLength:int) (data: list<int>) : list<list<int>> = 
+2017-12-14 18:13:45 -     match data with
+2017-12-14 18:13:45 -     | [] -> []
+2017-12-14 18:13:45 -     | _ ->
+2017-12-14 18:13:45 -         let endPoint = rowLength - 1
+2017-12-14 18:13:45 -         let arrayHead = data.[0..endPoint] 
+2017-12-14 18:13:45 -         let arrayRest = data.[rowLength..]
+2017-12-14 18:13:45 -         
+2017-12-14 18:13:45 -         arrayHead :: (separateBy rowLength arrayRest)
+2017-12-14 18:13:45 - let dataCleaner (rows:int) (input:string) : list<list<int>> = 
+2017-12-14 18:13:45 -     input
+2017-12-14 18:13:45 -         |> stringSplit 
+2017-12-14 18:13:45 -         |> Array.toList
+2017-12-14 18:13:45 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 18:13:45 -         |> separateBy rows
+2017-12-14 18:13:45 -         
+2017-12-14 18:13:45 - dataCleaner 16 fullInput
+2017-12-14 18:13:46 - let rowDiffer (row : list<int>) : int = 
+2017-12-14 18:13:46 -     (Seq.max row) - (Seq.min row) 
+2017-12-14 18:13:46 - let adventOfCode2 (rows:int) (data:string) = 
+2017-12-14 18:13:46 -     data
+2017-12-14 18:13:46 -         |> dataCleaner rows
+2017-12-14 18:13:46 -         |> Seq.sumBy rowDiffer
+2017-12-14 18:13:46 - adventOfCode2 16 fullInput
+2017-12-14 18:13:46 - let divideFactors (dividend:int) (divisor:int) : int = 
+2017-12-14 18:13:46 -     if dividend % divisor = 0 then
+2017-12-14 18:13:46 -         (dividend / divisor)
+2017-12-14 18:13:46 -     else
+2017-12-14 18:13:46 -         0
+2017-12-14 18:13:46 - let potentialFactor (maxInt:int) (num:int) : bool = 
+2017-12-14 18:13:46 -     if num <= maxInt/2 then 
+2017-12-14 18:13:46 -         true 
+2017-12-14 18:13:46 -     else 
+2017-12-14 18:13:46 -         false
+2017-12-14 18:13:46 - let filterList (maxInt:int) (data:list<int>) : list<int> =
+2017-12-14 18:13:46 -     List.filter (potentialFactor maxInt) data 
+2017-12-14 18:13:46 - let helper1 (maxInt:int) (data:list<int>) : int =
+2017-12-14 18:13:46 -     data
+2017-12-14 18:13:46 -     |> List.map (divideFactors maxInt)
+2017-12-14 18:13:46 -     |> List.sum 
+2017-12-14 18:13:46 -    
+2017-12-14 18:13:46 - let folder ((answer, oldFilter):int*list<int>) (maxInt:int) : int*list<int> =
+2017-12-14 18:13:46 -     let newFilter = filterList maxInt oldFilter
+2017-12-14 18:13:46 -     
+2017-12-14 18:13:46 -     newFilter
+2017-12-14 18:13:46 -     |> (helper1 maxInt)
+2017-12-14 18:13:46 -     |> (fun additional -> ((answer + additional), newFilter))
+2017-12-14 18:13:46 -     
+2017-12-14 18:13:46 - let solveRow (input:list<int>) : int = 
+2017-12-14 18:13:46 -     let startInt = input.Head
+2017-12-14 18:13:46 -     
+2017-12-14 18:13:46 -     input
+2017-12-14 18:13:46 -     |> List.fold folder (0, input) 
+2017-12-14 18:13:46 -     |> (fun (answer, _) -> answer)
+2017-12-14 18:13:46 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 18:13:46 -     data
+2017-12-14 18:13:46 -         |> dataCleaner rows
+2017-12-14 18:13:46 -         |> List.map (List.sortDescending)
+2017-12-14 18:13:46 -         |> List.map solveRow 
+2017-12-14 18:13:46 -         |> List.sum 
+2017-12-14 18:13:46 - adventOfCode2Part2 16 fullInput
+2017-12-14 18:13:54 - shutdown request
+2017-12-14 18:13:58 - // include directory, this will be replaced by the kernel
+2017-12-14 18:13:58 - #I "C:\\Users\\misadmin\\Desktop\\F sharp notebook"
+2017-12-14 18:13:58 - // load base dlls
+2017-12-14 18:13:58 - #r "IfSharp.Kernel.dll"
+2017-12-14 18:13:58 - #r "NetMQ.dll"
+2017-12-14 18:13:58 - // open the global functions and methods
+2017-12-14 18:13:58 - open IfSharp.Kernel
+2017-12-14 18:13:58 - open IfSharp.Kernel.Globals
+2017-12-14 18:14:05 - F# Interactive for F# 4.1
+2017-12-14 18:14:05 - Freely distributed under the Apache 2.0 Open Source License
+2017-12-14 18:14:05 - For help type #help;;
+2017-12-14 18:14:05 - > val it : ResizeArray<System.Type * (obj -> seq<string * string> * string)> =
+2017-12-14 18:14:05 -   seq []
+2017-12-14 18:14:05 - --> Added 'C:\Users\misadmin\Desktop\F sharp notebook' to library include path
+2017-12-14 18:14:05 - --> Referenced 'C:\Users\misadmin\Desktop\F sharp notebook\IfSharp.Kernel.dll' (file may be locked by F# Interactive process)
+2017-12-14 18:14:05 - --> Referenced 'C:\Users\misadmin\Desktop\F sharp notebook\NetMQ.dll' (file may be locked by F# Interactive process)
+2017-12-14 18:14:06 - open System
+2017-12-14 18:14:06 - let fullInput = "121	59	141	21	120	67	58	49	22	46	56	112	53	111	104	130
+2017-12-14 18:14:06 - 1926	1910	760	2055	28	2242	146	1485	163	976	1842	1982	137	1387	162	789
+2017-12-14 18:14:06 - 4088	258	2060	1014	4420	177	4159	194	2794	4673	4092	681	174	2924	170	3548
+2017-12-14 18:14:06 - 191	407	253	192	207	425	580	231	197	382	404	472	164	571	500	216
+2017-12-14 18:14:06 - 4700	1161	168	5398	5227	5119	252	2552	4887	5060	1152	3297	847	4525	220	262
+2017-12-14 18:14:06 - 2417	992	1445	184	554	2940	209	2574	2262	1911	2923	204	2273	2760	506	157
+2017-12-14 18:14:06 - 644	155	638	78	385	408	152	360	588	618	313	126	172	220	217	161
+2017-12-14 18:14:06 - 227	1047	117	500	1445	222	29	913	190	791	230	1281	1385	226	856	1380
+2017-12-14 18:14:06 - 436	46	141	545	122	86	283	124	249	511	347	502	168	468	117	94
+2017-12-14 18:14:06 - 2949	3286	2492	2145	1615	159	663	1158	154	939	166	2867	141	324	2862	641
+2017-12-14 18:14:06 - 1394	151	90	548	767	1572	150	913	141	1646	154	1351	1506	1510	707	400
+2017-12-14 18:14:06 - 646	178	1228	1229	270	167	161	1134	193	1312	1428	131	1457	719	1288	989
+2017-12-14 18:14:06 - 1108	1042	93	140	822	124	1037	1075	125	941	1125	298	136	94	135	711
+2017-12-14 18:14:06 - 112	2429	1987	2129	2557	1827	477	100	78	634	352	1637	588	77	1624	2500
+2017-12-14 18:14:06 - 514	218	209	185	197	137	393	555	588	569	710	537	48	309	519	138
+2017-12-14 18:14:06 - 1567	3246	4194	151	3112	903	1575	134	150	4184	3718	4077	180	4307	4097	1705"
+2017-12-14 18:14:06 - let stringSplit (input:string) : string[] = 
+2017-12-14 18:14:06 -     input.Split()
+2017-12-14 18:14:06 - let rec separateBy (rowLength:int) (data: list<int>) : list<list<int>> = 
+2017-12-14 18:14:06 -     match data with
+2017-12-14 18:14:06 -     | [] -> []
+2017-12-14 18:14:06 -     | _ ->
+2017-12-14 18:14:06 -         let endPoint = rowLength - 1
+2017-12-14 18:14:06 -         let arrayHead = data.[0..endPoint] 
+2017-12-14 18:14:06 -         let arrayRest = data.[rowLength..]
+2017-12-14 18:14:06 -         
+2017-12-14 18:14:06 -         arrayHead :: (separateBy rowLength arrayRest)
+2017-12-14 18:14:07 - let dataCleaner (rows:int) (input:string) : list<list<int>> = 
+2017-12-14 18:14:07 -     input
+2017-12-14 18:14:07 -         |> stringSplit 
+2017-12-14 18:14:07 -         |> Array.toList
+2017-12-14 18:14:07 -         |> List.map (fun x -> System.Int32.Parse x) 
+2017-12-14 18:14:07 -         |> separateBy rows
+2017-12-14 18:14:07 -         
+2017-12-14 18:14:07 - dataCleaner 16 fullInput
+2017-12-14 18:14:07 - let rowDiffer (row : list<int>) : int = 
+2017-12-14 18:14:07 -     (Seq.max row) - (Seq.min row) 
+2017-12-14 18:14:07 - let adventOfCode2 (rows:int) (data:string) = 
+2017-12-14 18:14:07 -     data
+2017-12-14 18:14:07 -         |> dataCleaner rows
+2017-12-14 18:14:07 -         |> Seq.sumBy rowDiffer
+2017-12-14 18:14:07 - adventOfCode2 16 fullInput
+2017-12-14 18:14:07 - let divideFactors (dividend:int) (divisor:int) : int = 
+2017-12-14 18:14:07 -     if dividend % divisor = 0 then
+2017-12-14 18:14:07 -         (dividend / divisor)
+2017-12-14 18:14:07 -     else
+2017-12-14 18:14:07 -         0
+2017-12-14 18:14:07 - let potentialFactor (maxInt:int) (num:int) : bool = 
+2017-12-14 18:14:07 -     if num <= maxInt/2 then 
+2017-12-14 18:14:07 -         true 
+2017-12-14 18:14:07 -     else 
+2017-12-14 18:14:07 -         false
+2017-12-14 18:14:07 - let filterList (maxInt:int) (data:list<int>) : list<int> =
+2017-12-14 18:14:07 -     List.filter (potentialFactor maxInt) data 
+2017-12-14 18:14:07 - let helper1 (maxInt:int) (data:list<int>) : int =
+2017-12-14 18:14:07 -     data
+2017-12-14 18:14:07 -     |> List.map (divideFactors maxInt)
+2017-12-14 18:14:07 -     |> List.sum 
+2017-12-14 18:14:08 -    
+2017-12-14 18:14:08 - let folder ((answer, oldFilter):int*list<int>) (maxInt:int) : int*list<int> =
+2017-12-14 18:14:08 -     let newFilter = filterList maxInt oldFilter
+2017-12-14 18:14:08 -     
+2017-12-14 18:14:08 -     newFilter
+2017-12-14 18:14:08 -     |> (helper1 maxInt)
+2017-12-14 18:14:08 -     |> (fun additional -> ((answer + additional), newFilter))
+2017-12-14 18:14:08 -     
+2017-12-14 18:14:08 - let solveRow (input:list<int>) : int = 
+2017-12-14 18:14:08 -     let startInt = input.Head
+2017-12-14 18:14:08 -     
+2017-12-14 18:14:08 -     input
+2017-12-14 18:14:08 -     |> List.fold folder (0, input) 
+2017-12-14 18:14:08 -     |> (fun (answer, _) -> answer)
+2017-12-14 18:14:08 - let adventOfCode2Part2 (rows:int) (data:string) = 
+2017-12-14 18:14:08 -     data
+2017-12-14 18:14:08 -         |> dataCleaner rows
+2017-12-14 18:14:08 -         |> List.map (List.sortDescending)
+2017-12-14 18:14:08 -         |> List.map solveRow 
+2017-12-14 18:14:08 -         |> List.sum 
+2017-12-14 18:14:08 - adventOfCode2Part2 16 fullInput
