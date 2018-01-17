@@ -4221,3 +4221,1115 @@
 2018-01-11 17:23:54 - adventOfCode3Part2 100 Right 1 1 (Seq.singleton ((0,0), 1))
 2018-01-11 17:24:17 - adventOfCode3Part2 277678 Right 1 1 (Seq.singleton ((0,0), 1))
 2018-01-11 17:36:57 - shutdown request
+2018-01-17 12:11:48 - // include directory, this will be replaced by the kernel
+2018-01-17 12:11:48 - #I "C:\\Users\\misadmin\\Desktop\\F sharp notebook"
+2018-01-17 12:11:48 - // load base dlls
+2018-01-17 12:11:48 - #r "IfSharp.Kernel.dll"
+2018-01-17 12:11:48 - #r "NetMQ.dll"
+2018-01-17 12:11:48 - // open the global functions and methods
+2018-01-17 12:11:48 - open IfSharp.Kernel
+2018-01-17 12:11:48 - open IfSharp.Kernel.Globals
+2018-01-17 12:11:55 - F# Interactive for F# 4.1
+2018-01-17 12:11:55 - Freely distributed under the Apache 2.0 Open Source License
+2018-01-17 12:11:55 - For help type #help;;
+2018-01-17 12:11:55 - > val it : ResizeArray<System.Type * (obj -> seq<string * string> * string)> =
+2018-01-17 12:11:55 -   seq []
+2018-01-17 12:11:55 - --> Added 'C:\Users\misadmin\Desktop\F sharp notebook' to library include path
+2018-01-17 12:11:55 - --> Referenced 'C:\Users\misadmin\Desktop\F sharp notebook\IfSharp.Kernel.dll' (file may be locked by F# Interactive process)
+2018-01-17 12:11:55 - --> Referenced 'C:\Users\misadmin\Desktop\F sharp notebook\NetMQ.dll' (file may be locked by F# Interactive process)
+2018-01-17 12:11:57 - Unknown content type on shell. msg_type is `comm_info_request`
+2018-01-17 12:12:17 - // include directory, this will be replaced by the kernel
+2018-01-17 12:12:17 - #I "C:\\Users\\misadmin\\Desktop\\F sharp notebook"
+2018-01-17 12:12:17 - // load base dlls
+2018-01-17 12:12:17 - #r "IfSharp.Kernel.dll"
+2018-01-17 12:12:17 - #r "NetMQ.dll"
+2018-01-17 12:12:17 - // open the global functions and methods
+2018-01-17 12:12:17 - open IfSharp.Kernel
+2018-01-17 12:12:17 - open IfSharp.Kernel.Globals
+2018-01-17 12:12:23 - F# Interactive for F# 4.1
+2018-01-17 12:12:23 - Freely distributed under the Apache 2.0 Open Source License
+2018-01-17 12:12:23 - For help type #help;;
+2018-01-17 12:12:23 - > val it : ResizeArray<System.Type * (obj -> seq<string * string> * string)> =
+2018-01-17 12:12:23 -   seq []
+2018-01-17 12:12:23 - --> Added 'C:\Users\misadmin\Desktop\F sharp notebook' to library include path
+2018-01-17 12:12:23 - --> Referenced 'C:\Users\misadmin\Desktop\F sharp notebook\IfSharp.Kernel.dll' (file may be locked by F# Interactive process)
+2018-01-17 12:12:23 - --> Referenced 'C:\Users\misadmin\Desktop\F sharp notebook\NetMQ.dll' (file may be locked by F# Interactive process)
+2018-01-17 12:12:27 - Unknown content type on shell. msg_type is `comm_info_request`
+2018-01-17 12:23:25 - // Getting the necessary libraries
+2018-01-17 12:23:25 - open System.IO
+2018-01-17 12:23:25 - open System
+2018-01-17 12:23:25 - // Getting the raw data
+2018-01-17 12:23:25 - let inputFile = "problem4.txt"
+2018-01-17 12:23:25 - let parseFile = File.ReadAllLines(inputFile)
+2018-01-17 12:23:25 - parseFile
+2018-01-17 12:30:11 - // Getting the necessary libraries
+2018-01-17 12:30:11 - open System.IO
+2018-01-17 12:30:11 - open System
+2018-01-17 12:30:11 - // Getting the raw data
+2018-01-17 12:30:11 - let inputFile = "problem4.txt"
+2018-01-17 12:30:11 - let parseFile = File.ReadAllLines(inputFile)
+2018-01-17 12:30:11 - let dataList = 
+2018-01-17 12:30:11 -     parseFile |> Array
+2018-01-17 12:30:11 - This type has no accessible object constructors
+2018-01-17 12:38:39 - Unknown content type on shell. msg_type is `comm_info_request`
+2018-01-17 12:46:26 - // Getting the necessary libraries
+2018-01-17 12:46:26 - open System.IO
+2018-01-17 12:46:26 - open System
+2018-01-17 12:46:26 - // Getting the raw data
+2018-01-17 12:46:26 - let inputFile = "problem4.txt"
+2018-01-17 12:46:26 - let parseFile input : string array = 
+2018-01-17 12:46:26 -     File.ReadAllLines(input)
+2018-01-17 12:46:26 - let dataList textArray = 
+2018-01-17 12:46:26 -     textArray 
+2018-01-17 12:46:26 -         |> Array.toList
+2018-01-17 12:46:26 -         |> Seq.collect (fun x -> x.Split())
+2018-01-17 12:46:26 - let advOfCodePart4 inputFile = 
+2018-01-17 12:46:26 -     inputFile
+2018-01-17 12:46:26 -         |> parseFile
+2018-01-17 12:46:26 -         |> dataList 
+2018-01-17 12:46:26 -         
+2018-01-17 12:46:26 - advOfCodePart4 inputFile
+2018-01-17 12:46:26 - Lookup on object of indeterminate type based on information prior to this program point. A type annotation may be needed prior to this program point to constrain the type of the object. This may allow the lookup to be resolved.
+2018-01-17 12:47:28 - // include directory, this will be replaced by the kernel
+2018-01-17 12:47:28 - #I "C:\\Users\\misadmin\\Desktop\\F sharp notebook"
+2018-01-17 12:47:28 - // load base dlls
+2018-01-17 12:47:28 - #r "IfSharp.Kernel.dll"
+2018-01-17 12:47:28 - #r "NetMQ.dll"
+2018-01-17 12:47:28 - // open the global functions and methods
+2018-01-17 12:47:28 - open IfSharp.Kernel
+2018-01-17 12:47:28 - open IfSharp.Kernel.Globals
+2018-01-17 12:47:35 - F# Interactive for F# 4.1
+2018-01-17 12:47:35 - Freely distributed under the Apache 2.0 Open Source License
+2018-01-17 12:47:35 - For help type #help;;
+2018-01-17 12:47:35 - > val it : ResizeArray<System.Type * (obj -> seq<string * string> * string)> =
+2018-01-17 12:47:35 -   seq []
+2018-01-17 12:47:35 - --> Added 'C:\Users\misadmin\Desktop\F sharp notebook' to library include path
+2018-01-17 12:47:35 - --> Referenced 'C:\Users\misadmin\Desktop\F sharp notebook\IfSharp.Kernel.dll' (file may be locked by F# Interactive process)
+2018-01-17 12:47:35 - --> Referenced 'C:\Users\misadmin\Desktop\F sharp notebook\NetMQ.dll' (file may be locked by F# Interactive process)
+2018-01-17 12:47:37 - Unknown content type on shell. msg_type is `comm_info_request`
+2018-01-17 12:47:51 - // include directory, this will be replaced by the kernel
+2018-01-17 12:47:51 - #I "C:\\Users\\misadmin\\Desktop\\F sharp notebook"
+2018-01-17 12:47:51 - // load base dlls
+2018-01-17 12:47:51 - #r "IfSharp.Kernel.dll"
+2018-01-17 12:47:51 - #r "NetMQ.dll"
+2018-01-17 12:47:51 - // open the global functions and methods
+2018-01-17 12:47:51 - open IfSharp.Kernel
+2018-01-17 12:47:51 - open IfSharp.Kernel.Globals
+2018-01-17 12:47:58 - F# Interactive for F# 4.1
+2018-01-17 12:47:58 - Freely distributed under the Apache 2.0 Open Source License
+2018-01-17 12:47:58 - For help type #help;;
+2018-01-17 12:47:58 - > val it : ResizeArray<System.Type * (obj -> seq<string * string> * string)> =
+2018-01-17 12:47:58 -   seq []
+2018-01-17 12:47:58 - --> Added 'C:\Users\misadmin\Desktop\F sharp notebook' to library include path
+2018-01-17 12:47:58 - --> Referenced 'C:\Users\misadmin\Desktop\F sharp notebook\IfSharp.Kernel.dll' (file may be locked by F# Interactive process)
+2018-01-17 12:47:58 - --> Referenced 'C:\Users\misadmin\Desktop\F sharp notebook\NetMQ.dll' (file may be locked by F# Interactive process)
+2018-01-17 12:48:00 - Unknown content type on shell. msg_type is `comm_info_request`
+2018-01-17 12:48:23 - // Getting the necessary libraries
+2018-01-17 12:48:23 - open System.IO
+2018-01-17 12:48:23 - open System
+2018-01-17 12:48:23 - // Getting the raw data
+2018-01-17 12:48:23 - let inputFile = "problem4.txt"
+2018-01-17 12:48:23 - let parseFile input : string array = 
+2018-01-17 12:48:23 -     File.ReadAllLines(input)
+2018-01-17 12:48:23 - let dataList textArray = 
+2018-01-17 12:48:23 -     textArray 
+2018-01-17 12:48:23 -         |> Array.toList
+2018-01-17 12:48:23 -         |> Seq.collect (fun x -> x.Split())
+2018-01-17 12:48:23 - let advOfCodePart4 (inputFile: string) : string List = 
+2018-01-17 12:48:23 -     inputFile
+2018-01-17 12:48:23 -         |> parseFile
+2018-01-17 12:48:23 -         |> dataList 
+2018-01-17 12:48:23 -         
+2018-01-17 12:48:23 - advOfCodePart4 inputFile
+2018-01-17 12:48:23 - Lookup on object of indeterminate type based on information prior to this program point. A type annotation may be needed prior to this program point to constrain the type of the object. This may allow the lookup to be resolved.
+2018-01-17 12:48:23 - Type mismatch. Expecting a
+2018-01-17 12:48:23 -     'string array -> List<string>'    
+2018-01-17 12:48:23 - but given a
+2018-01-17 12:48:23 -     'string [] -> seq<obj>'    
+2018-01-17 12:48:23 - The type 'List<string>' does not match the type 'seq<obj>'
+2018-01-17 12:49:04 - // Getting the necessary libraries
+2018-01-17 12:49:04 - open System.IO
+2018-01-17 12:49:04 - open System
+2018-01-17 12:49:04 - // Getting the raw data
+2018-01-17 12:49:04 - let inputFile = "problem4.txt"
+2018-01-17 12:49:04 - let parseFile input : string array = 
+2018-01-17 12:49:04 -     File.ReadAllLines(input)
+2018-01-17 12:49:04 - let dataList textArray = 
+2018-01-17 12:49:04 -     textArray 
+2018-01-17 12:49:04 -         |> Array.toList
+2018-01-17 12:49:04 -         |> Seq.collect (fun x -> x.Split())
+2018-01-17 12:49:04 - let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 12:49:04 -     inputFile
+2018-01-17 12:49:04 -         |> parseFile
+2018-01-17 12:49:04 -         |> dataList 
+2018-01-17 12:49:04 -         
+2018-01-17 12:49:04 - advOfCodePart4 inputFile
+2018-01-17 12:49:04 - Lookup on object of indeterminate type based on information prior to this program point. A type annotation may be needed prior to this program point to constrain the type of the object. This may allow the lookup to be resolved.
+2018-01-17 12:49:04 - Type mismatch. Expecting a
+2018-01-17 12:49:04 -     'string array -> string []'    
+2018-01-17 12:49:04 - but given a
+2018-01-17 12:49:04 -     'string [] -> seq<obj>'    
+2018-01-17 12:49:04 - The type 'string []' does not match the type 'seq<obj>'
+2018-01-17 12:52:08 - // Getting the necessary libraries
+2018-01-17 12:52:08 - open System.IO
+2018-01-17 12:52:08 - open System
+2018-01-17 12:52:08 - // Getting the raw data
+2018-01-17 12:52:08 - let inputFile = "problem4.txt"
+2018-01-17 12:52:08 - let parseFile input = 
+2018-01-17 12:52:08 -     File.ReadAllLines(input)
+2018-01-17 12:52:08 - let dataList textArray = 
+2018-01-17 12:52:08 -     textArray 
+2018-01-17 12:52:08 -         |> Array.toList
+2018-01-17 12:52:08 -         |> Seq.collect (fun x -> x.Split())
+2018-01-17 12:52:08 - let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 12:52:08 -     inputFile
+2018-01-17 12:52:08 -         |> parseFile
+2018-01-17 12:52:08 -         |> dataList 
+2018-01-17 12:52:08 -         
+2018-01-17 12:52:08 - let thing = parseFile inputFile
+2018-01-17 12:52:08 - thing.GetType()
+2018-01-17 12:52:08 - Lookup on object of indeterminate type based on information prior to this program point. A type annotation may be needed prior to this program point to constrain the type of the object. This may allow the lookup to be resolved.
+2018-01-17 12:52:08 - Type mismatch. Expecting a
+2018-01-17 12:52:08 -     'string [] -> string []'    
+2018-01-17 12:52:08 - but given a
+2018-01-17 12:52:08 -     'string [] -> seq<obj>'    
+2018-01-17 12:52:08 - The type 'string []' does not match the type 'seq<obj>'
+2018-01-17 12:52:09 - // Getting the necessary libraries
+2018-01-17 12:52:09 - open System.IO
+2018-01-17 12:52:09 - open System
+2018-01-17 12:52:09 - // Getting the raw data
+2018-01-17 12:52:09 - let inputFile = "problem4.txt"
+2018-01-17 12:52:09 - let parseFile input = 
+2018-01-17 12:52:09 -     File.ReadAllLines(input)
+2018-01-17 12:52:09 - let dataList textArray = 
+2018-01-17 12:52:09 -     textArray 
+2018-01-17 12:52:09 -         |> Array.toList
+2018-01-17 12:52:09 -         |> Seq.collect (fun x -> x.Split())
+2018-01-17 12:52:09 - let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 12:52:09 -     inputFile
+2018-01-17 12:52:09 -         |> parseFile
+2018-01-17 12:52:09 -         |> dataList 
+2018-01-17 12:52:09 -         
+2018-01-17 12:52:09 - let thing = parseFile inputFile
+2018-01-17 12:52:09 - thing.GetType()
+2018-01-17 12:52:09 - Lookup on object of indeterminate type based on information prior to this program point. A type annotation may be needed prior to this program point to constrain the type of the object. This may allow the lookup to be resolved.
+2018-01-17 12:52:09 - Type mismatch. Expecting a
+2018-01-17 12:52:09 -     'string [] -> string []'    
+2018-01-17 12:52:09 - but given a
+2018-01-17 12:52:09 -     'string [] -> seq<obj>'    
+2018-01-17 12:52:09 - The type 'string []' does not match the type 'seq<obj>'
+2018-01-17 12:52:16 - // Getting the necessary libraries
+2018-01-17 12:52:16 - open System.IO
+2018-01-17 12:52:16 - open System
+2018-01-17 12:52:16 - // Getting the raw data
+2018-01-17 12:52:16 - let inputFile = "problem4.txt"
+2018-01-17 12:52:16 - let parseFile input = 
+2018-01-17 12:52:16 -     File.ReadAllLines(input)
+2018-01-17 12:52:16 - // let dataList textArray = 
+2018-01-17 12:52:16 - //     textArray 
+2018-01-17 12:52:16 - //         |> Array.toList
+2018-01-17 12:52:16 - //         |> Seq.collect (fun x -> x.Split())
+2018-01-17 12:52:16 - // let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 12:52:16 - //     inputFile
+2018-01-17 12:52:16 - //         |> parseFile
+2018-01-17 12:52:16 - //         |> dataList 
+2018-01-17 12:52:16 -         
+2018-01-17 12:52:16 - let thing = parseFile inputFile
+2018-01-17 12:52:16 - thing.GetType()
+2018-01-17 12:52:57 - // Getting the necessary libraries
+2018-01-17 12:52:57 - open System.IO
+2018-01-17 12:52:57 - open System
+2018-01-17 12:52:57 - // Getting the raw data
+2018-01-17 12:52:57 - let inputFile = "problem4.txt"
+2018-01-17 12:52:57 - let parseFile input = 
+2018-01-17 12:52:57 -     File.ReadAllLines(input)
+2018-01-17 12:52:57 - let dataList (textArray: String[]) = 
+2018-01-17 12:52:57 -     textArray 
+2018-01-17 12:52:57 -         |> Array.toList
+2018-01-17 12:52:57 -         |> Seq.collect (fun x -> x.Split())
+2018-01-17 12:52:57 - // let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 12:52:57 - //     inputFile
+2018-01-17 12:52:57 - //         |> parseFile
+2018-01-17 12:52:57 - //         |> dataList 
+2018-01-17 12:52:57 -         
+2018-01-17 12:52:57 - let thing = parseFile inputFile
+2018-01-17 12:52:57 - thing.GetType()
+2018-01-17 12:53:26 - // Getting the necessary libraries
+2018-01-17 12:53:26 - open System.IO
+2018-01-17 12:53:26 - open System
+2018-01-17 12:53:26 - // Getting the raw data
+2018-01-17 12:53:26 - let inputFile = "problem4.txt"
+2018-01-17 12:53:26 - let parseFile input = 
+2018-01-17 12:53:26 -     File.ReadAllLines(input)
+2018-01-17 12:53:26 - let dataList (textArray: String[]) = 
+2018-01-17 12:53:26 -     textArray 
+2018-01-17 12:53:26 -         |> Array.toList
+2018-01-17 12:53:26 -         |> Seq.collect (fun x -> x.Split())
+2018-01-17 12:53:26 - // let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 12:53:26 - //     inputFile
+2018-01-17 12:53:26 - //         |> parseFile
+2018-01-17 12:53:26 - //         |> dataList 
+2018-01-17 12:53:26 -         
+2018-01-17 12:53:26 - let thing = inputFile |> parseFile |> dataList
+2018-01-17 12:53:26 - thing.GetType()
+2018-01-17 12:53:35 - // Getting the necessary libraries
+2018-01-17 12:53:35 - open System.IO
+2018-01-17 12:53:35 - open System
+2018-01-17 12:53:35 - // Getting the raw data
+2018-01-17 12:53:35 - let inputFile = "problem4.txt"
+2018-01-17 12:53:35 - let parseFile input = 
+2018-01-17 12:53:35 -     File.ReadAllLines(input)
+2018-01-17 12:53:35 - let dataList (textArray: String[]) = 
+2018-01-17 12:53:35 -     textArray 
+2018-01-17 12:53:35 -         |> Array.toList
+2018-01-17 12:53:35 -         |> Seq.collect (fun x -> x.Split())
+2018-01-17 12:53:35 - // let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 12:53:35 - //     inputFile
+2018-01-17 12:53:35 - //         |> parseFile
+2018-01-17 12:53:35 - //         |> dataList 
+2018-01-17 12:53:35 -         
+2018-01-17 12:53:35 - let thing = inputFile |> parseFile |> dataList
+2018-01-17 12:53:35 - thing.GetType()
+2018-01-17 12:53:46 - // Getting the necessary libraries
+2018-01-17 12:53:46 - open System.IO
+2018-01-17 12:53:46 - open System
+2018-01-17 12:53:46 - // Getting the raw data
+2018-01-17 12:53:46 - let inputFile = "problem4.txt"
+2018-01-17 12:53:46 - let parseFile input = 
+2018-01-17 12:53:46 -     File.ReadAllLines(input)
+2018-01-17 12:53:46 - let dataList (textArray: String[]) = 
+2018-01-17 12:53:46 -     textArray 
+2018-01-17 12:53:46 -         |> Array.toList
+2018-01-17 12:53:46 -         |> Seq.collect (fun x -> x.Split())
+2018-01-17 12:53:46 -         |> Seq.toList
+2018-01-17 12:53:46 - // let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 12:53:46 - //     inputFile
+2018-01-17 12:53:46 - //         |> parseFile
+2018-01-17 12:53:46 - //         |> dataList 
+2018-01-17 12:53:46 -         
+2018-01-17 12:53:46 - let thing = inputFile |> parseFile |> dataList
+2018-01-17 12:53:46 - thing.GetType()
+2018-01-17 12:54:08 - // Getting the necessary libraries
+2018-01-17 12:54:08 - open System.IO
+2018-01-17 12:54:08 - open System
+2018-01-17 12:54:08 - // Getting the raw data
+2018-01-17 12:54:08 - let inputFile = "problem4.txt"
+2018-01-17 12:54:08 - let parseFile input = 
+2018-01-17 12:54:08 -     File.ReadAllLines(input)
+2018-01-17 12:54:08 - let dataList (textArray: String[]) = 
+2018-01-17 12:54:08 -     textArray 
+2018-01-17 12:54:08 -         |> Array.toList
+2018-01-17 12:54:08 -         |> Seq.collect (fun x -> x.Split())
+2018-01-17 12:54:08 - // let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 12:54:08 - //     inputFile
+2018-01-17 12:54:08 - //         |> parseFile
+2018-01-17 12:54:08 - //         |> dataList 
+2018-01-17 12:54:08 -         
+2018-01-17 12:54:08 - let thing = inputFile |> parseFile |> dataList
+2018-01-17 12:54:08 - thing.GetType()
+2018-01-17 14:58:38 - Unknown content type on shell. msg_type is `comm_info_request`
+2018-01-17 15:02:03 - // Getting the necessary libraries
+2018-01-17 15:02:03 - open System.IO
+2018-01-17 15:02:03 - open System
+2018-01-17 15:02:03 - // Getting the raw data
+2018-01-17 15:02:03 - let inputFile = "problem4.txt"
+2018-01-17 15:02:03 - let parseFile input = 
+2018-01-17 15:02:03 -     File.ReadAllText(input)
+2018-01-17 15:02:03 -     |> .Split(' ')
+2018-01-17 15:02:03 -     
+2018-01-17 15:02:03 - // let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 15:02:03 - //     inputFile
+2018-01-17 15:02:03 - //         |> parseFile
+2018-01-17 15:02:03 - //         |> dataList 
+2018-01-17 15:02:03 -         
+2018-01-17 15:02:03 - let thing = inputFile |> parseFile 
+2018-01-17 15:02:03 - thing.GetType()
+2018-01-17 15:02:03 - Unexpected symbol '.' in expression
+2018-01-17 15:02:21 - // Getting the necessary libraries
+2018-01-17 15:02:21 - open System.IO
+2018-01-17 15:02:21 - open System
+2018-01-17 15:02:21 - // Getting the raw data
+2018-01-17 15:02:21 - let inputFile = "problem4.txt"
+2018-01-17 15:02:21 - let parseFile input = 
+2018-01-17 15:02:21 -     File.ReadAllText(input)
+2018-01-17 15:02:21 -     |> fun x ->  x.Split(' ')
+2018-01-17 15:02:21 -     
+2018-01-17 15:02:21 - // let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 15:02:21 - //     inputFile
+2018-01-17 15:02:21 - //         |> parseFile
+2018-01-17 15:02:21 - //         |> dataList 
+2018-01-17 15:02:21 -         
+2018-01-17 15:02:21 - let thing = inputFile |> parseFile 
+2018-01-17 15:02:21 - thing.GetType()
+2018-01-17 15:02:30 - // Getting the necessary libraries
+2018-01-17 15:02:30 - open System.IO
+2018-01-17 15:02:30 - open System
+2018-01-17 15:02:30 - // Getting the raw data
+2018-01-17 15:02:30 - let inputFile = "problem4.txt"
+2018-01-17 15:02:30 - let parseFile input = 
+2018-01-17 15:02:30 -     File.ReadAllText(input)
+2018-01-17 15:02:30 -     |> fun x ->  x.Split(' ')
+2018-01-17 15:02:30 -     
+2018-01-17 15:02:30 - // let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 15:02:30 - //     inputFile
+2018-01-17 15:02:30 - //         |> parseFile
+2018-01-17 15:02:30 - //         |> dataList 
+2018-01-17 15:02:30 -         
+2018-01-17 15:02:30 - let thing = inputFile |> parseFile 
+2018-01-17 15:02:30 - thing
+2018-01-17 15:02:46 - // Getting the necessary libraries
+2018-01-17 15:02:46 - open System.IO
+2018-01-17 15:02:46 - open System
+2018-01-17 15:02:46 - // Getting the raw data
+2018-01-17 15:02:46 - let inputFile = "problem4.txt"
+2018-01-17 15:02:46 - let parseFile input = 
+2018-01-17 15:02:46 -     File.ReadAllText(input)
+2018-01-17 15:02:46 -     |> fun x ->  x.Split(' ')
+2018-01-17 15:02:46 -     
+2018-01-17 15:02:46 - // let advOfCodePart4 (inputFile: string) : string [] = 
+2018-01-17 15:02:46 - //     inputFile
+2018-01-17 15:02:46 - //         |> parseFile
+2018-01-17 15:02:46 - //         |> dataList 
+2018-01-17 15:02:46 -         
+2018-01-17 15:02:46 - let thing = inputFile |> parseFile 
+2018-01-17 15:02:46 - thing.GetType()
+2018-01-17 15:07:22 - // Getting the necessary libraries
+2018-01-17 15:07:22 - open System.IO
+2018-01-17 15:07:22 - open System
+2018-01-17 15:07:22 - // Getting the raw data
+2018-01-17 15:07:22 - let inputFile = "problem4.txt"
+2018-01-17 15:07:22 - let parseFile input = 
+2018-01-17 15:07:22 -     File.ReadAllText(input)
+2018-01-17 15:07:22 -     |> fun x ->  x.Split(' ')
+2018-01-17 15:07:22 -     
+2018-01-17 15:07:22 - let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:07:22 -     let initialData = 
+2018-01-17 15:07:22 -     inputFile
+2018-01-17 15:07:22 -         |> parseFile
+2018-01-17 15:07:22 -     
+2018-01-17 15:07:22 -     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:07:22 -     
+2018-01-17 15:07:22 -     len(initialData) = len(noDuplicates)
+2018-01-17 15:07:22 -         
+2018-01-17 15:07:22 - let thing = inputFile |> parseFile 
+2018-01-17 15:07:22 - thing.GetType()
+2018-01-17 15:07:22 - Possible incorrect indentation: this token is offside of context started at position (18:5). Try indenting this token further or using standard formatting conventions.
+2018-01-17 15:07:22 - Possible incorrect indentation: this token is offside of context started at position (18:5). Try indenting this token further or using standard formatting conventions.
+2018-01-17 15:07:22 - Possible incorrect indentation: this token is offside of context started at position (18:5). Try indenting this token further or using standard formatting conventions.
+2018-01-17 15:07:22 - Possible incorrect indentation: this token is offside of context started at position (18:5). Try indenting this token further or using standard formatting conventions.
+2018-01-17 15:07:22 - Possible incorrect indentation: this token is offside of context started at position (18:5). Try indenting this token further or using standard formatting conventions.
+2018-01-17 15:07:22 - Possible incorrect indentation: this token is offside of context started at position (18:5). Try indenting this token further or using standard formatting conventions.
+2018-01-17 15:07:22 - The block following this 'let' is unfinished. Every code block is an expression and must have a result. 'let' cannot be the final code element in a block. Consider giving this block an explicit result.
+2018-01-17 15:07:36 - // Getting the necessary libraries
+2018-01-17 15:07:36 - open System.IO
+2018-01-17 15:07:36 - open System
+2018-01-17 15:07:36 - // Getting the raw data
+2018-01-17 15:07:36 - let inputFile = "problem4.txt"
+2018-01-17 15:07:36 - let parseFile input = 
+2018-01-17 15:07:36 -     File.ReadAllText(input)
+2018-01-17 15:07:36 -     |> fun x ->  x.Split(' ')
+2018-01-17 15:07:36 -     
+2018-01-17 15:07:36 - let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:07:36 -     let initialData = 
+2018-01-17 15:07:36 -         inputFile
+2018-01-17 15:07:36 -             |> parseFile
+2018-01-17 15:07:36 -     
+2018-01-17 15:07:36 -     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:07:36 -     
+2018-01-17 15:07:36 -     len(initialData) = len(noDuplicates)
+2018-01-17 15:07:36 -         
+2018-01-17 15:07:36 - let thing = inputFile |> parseFile 
+2018-01-17 15:07:36 - thing.GetType()
+2018-01-17 15:07:36 - The value or constructor 'len' is not defined.
+2018-01-17 15:07:36 - The value or constructor 'len' is not defined.
+2018-01-17 15:08:16 - // Getting the necessary libraries
+2018-01-17 15:08:16 - open System.IO
+2018-01-17 15:08:16 - open System
+2018-01-17 15:08:16 - // Getting the raw data
+2018-01-17 15:08:16 - let inputFile = "problem4.txt"
+2018-01-17 15:08:16 - let parseFile input = 
+2018-01-17 15:08:16 -     File.ReadAllText(input)
+2018-01-17 15:08:16 -     |> fun x ->  x.Split(' ')
+2018-01-17 15:08:16 -     
+2018-01-17 15:08:16 - let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:08:16 -     let initialData = 
+2018-01-17 15:08:16 -         inputFile
+2018-01-17 15:08:16 -             |> parseFile
+2018-01-17 15:08:16 -     
+2018-01-17 15:08:16 -     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:08:16 -     
+2018-01-17 15:08:16 -     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:08:16 -         
+2018-01-17 15:08:16 - let thing = inputFile |> parseFile 
+2018-01-17 15:08:16 - thing.GetType()
+2018-01-17 15:08:33 - // Getting the necessary libraries
+2018-01-17 15:08:33 - open System.IO
+2018-01-17 15:08:33 - open System
+2018-01-17 15:08:33 - // Getting the raw data
+2018-01-17 15:08:33 - let inputFile = "problem4.txt"
+2018-01-17 15:08:33 - let parseFile input = 
+2018-01-17 15:08:33 -     File.ReadAllText(input)
+2018-01-17 15:08:33 -     |> fun x ->  x.Split(' ')
+2018-01-17 15:08:33 -     
+2018-01-17 15:08:33 - let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:08:33 -     let initialData = 
+2018-01-17 15:08:33 -         inputFile
+2018-01-17 15:08:33 -             |> parseFile
+2018-01-17 15:08:33 -     
+2018-01-17 15:08:33 -     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:08:33 -     
+2018-01-17 15:08:33 -     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:08:33 -         
+2018-01-17 15:08:33 - adventofCodePart4 inputFile
+2018-01-17 15:08:34 - The value or constructor 'adventofCodePart4' is not defined. Maybe you want one of the following:
+2018-01-17 15:08:34 -    advOfCodePart4
+2018-01-17 15:08:40 - // Getting the necessary libraries
+2018-01-17 15:08:40 - open System.IO
+2018-01-17 15:08:40 - open System
+2018-01-17 15:08:40 - // Getting the raw data
+2018-01-17 15:08:40 - let inputFile = "problem4.txt"
+2018-01-17 15:08:40 - let parseFile input = 
+2018-01-17 15:08:40 -     File.ReadAllText(input)
+2018-01-17 15:08:40 -     |> fun x ->  x.Split(' ')
+2018-01-17 15:08:40 -     
+2018-01-17 15:08:40 - let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:08:40 -     let initialData = 
+2018-01-17 15:08:40 -         inputFile
+2018-01-17 15:08:40 -             |> parseFile
+2018-01-17 15:08:40 -     
+2018-01-17 15:08:40 -     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:08:40 -     
+2018-01-17 15:08:40 -     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:08:40 -         
+2018-01-17 15:08:40 - advOfCodePart4 inputFile
+2018-01-17 15:13:11 - // Getting the necessary libraries
+2018-01-17 15:13:11 - open System.IO
+2018-01-17 15:13:11 - open System
+2018-01-17 15:13:11 - // Getting the raw data
+2018-01-17 15:13:11 - let inputFile = "problem4.txt"
+2018-01-17 15:13:11 - // let parseFile input = 
+2018-01-17 15:13:11 - //     File.ReadAllText(input)
+2018-01-17 15:13:11 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:13:11 - let parseFile (input: string) : string[] = 
+2018-01-17 15:13:11 -     File.ReadAllLines(input)
+2018-01-17 15:13:11 -     
+2018-01-17 15:13:11 - let duplicates (original: string[]) = None
+2018-01-17 15:13:11 -     
+2018-01-17 15:13:11 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:13:11 - //     let initialData = 
+2018-01-17 15:13:11 - //         inputFile
+2018-01-17 15:13:11 - //             |> parseFile
+2018-01-17 15:13:11 -     
+2018-01-17 15:13:11 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:13:11 -     
+2018-01-17 15:13:11 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:13:11 -         
+2018-01-17 15:13:11 - let thing = inputFile |> parseFile
+2018-01-17 15:13:18 - // Getting the necessary libraries
+2018-01-17 15:13:18 - open System.IO
+2018-01-17 15:13:18 - open System
+2018-01-17 15:13:18 - // Getting the raw data
+2018-01-17 15:13:18 - let inputFile = "problem4.txt"
+2018-01-17 15:13:18 - // let parseFile input = 
+2018-01-17 15:13:18 - //     File.ReadAllText(input)
+2018-01-17 15:13:18 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:13:18 - let parseFile (input: string) : string[] = 
+2018-01-17 15:13:18 -     File.ReadAllLines(input)
+2018-01-17 15:13:18 -     
+2018-01-17 15:13:18 - let duplicates (original: string[]) = None
+2018-01-17 15:13:18 -     
+2018-01-17 15:13:18 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:13:18 - //     let initialData = 
+2018-01-17 15:13:18 - //         inputFile
+2018-01-17 15:13:18 - //             |> parseFile
+2018-01-17 15:13:18 -     
+2018-01-17 15:13:18 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:13:18 -     
+2018-01-17 15:13:18 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:13:18 -         
+2018-01-17 15:13:18 - let thing = inputFile |> parseFile
+2018-01-17 15:13:18 - thing
+2018-01-17 15:20:42 - // Getting the necessary libraries
+2018-01-17 15:20:42 - open System.IO
+2018-01-17 15:20:42 - open System
+2018-01-17 15:20:42 - // Getting the raw data
+2018-01-17 15:20:42 - let inputFile = "problem4.txt"
+2018-01-17 15:20:42 - // let parseFile input = 
+2018-01-17 15:20:42 - //     File.ReadAllText(input)
+2018-01-17 15:20:42 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:20:42 - let parseFile (input: string) : string[] = 
+2018-01-17 15:20:42 -     File.ReadAllLines(input)
+2018-01-17 15:20:42 -     |> Array.map (fun x -> x.Split(' ')
+2018-01-17 15:20:42 -     
+2018-01-17 15:20:42 - let duplicates (original: string[]) = None
+2018-01-17 15:20:42 -     
+2018-01-17 15:20:42 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:20:42 - //     let initialData = 
+2018-01-17 15:20:42 - //         inputFile
+2018-01-17 15:20:42 - //             |> parseFile
+2018-01-17 15:20:42 -     
+2018-01-17 15:20:42 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:20:42 -     
+2018-01-17 15:20:42 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:20:42 -         
+2018-01-17 15:20:42 - let thing = inputFile |> parseFile
+2018-01-17 15:20:42 - thing
+2018-01-17 15:20:42 - Possible incorrect indentation: this token is offside of context started at position (16:5). Try indenting this token further or using standard formatting conventions.
+2018-01-17 15:20:42 - Unexpected keyword 'let' or 'use' in expression
+2018-01-17 15:20:42 - Possible incorrect indentation: this token is offside of context started at position (20:1). Try indenting this token further or using standard formatting conventions.
+2018-01-17 15:20:42 - Unexpected keyword 'let' or 'use' in binding. Expected incomplete structured construct at or before this point or other token.
+2018-01-17 15:20:42 - Incomplete value or function definition. If this is in an expression, the body of the expression must be indented to the same column as the 'let' keyword.
+2018-01-17 15:20:42 - Unexpected identifier in interaction. Expected incomplete structured construct at or before this point, ';', ';;' or other token.
+2018-01-17 15:20:42 - parse error
+2018-01-17 15:21:00 - // Getting the necessary libraries
+2018-01-17 15:21:00 - open System.IO
+2018-01-17 15:21:00 - open System
+2018-01-17 15:21:00 - // Getting the raw data
+2018-01-17 15:21:00 - let inputFile = "problem4.txt"
+2018-01-17 15:21:00 - // let parseFile input = 
+2018-01-17 15:21:00 - //     File.ReadAllText(input)
+2018-01-17 15:21:00 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:21:00 - let parseFile (input: string) : string[] = 
+2018-01-17 15:21:00 -     File.ReadAllLines(input)
+2018-01-17 15:21:00 -         |> Array.map (fun x -> x.Split(' '))
+2018-01-17 15:21:00 -     
+2018-01-17 15:21:00 - let duplicates (original: string[]) = None
+2018-01-17 15:21:00 -     
+2018-01-17 15:21:00 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:21:00 - //     let initialData = 
+2018-01-17 15:21:00 - //         inputFile
+2018-01-17 15:21:00 - //             |> parseFile
+2018-01-17 15:21:00 -     
+2018-01-17 15:21:00 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:21:00 -     
+2018-01-17 15:21:00 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:21:00 -         
+2018-01-17 15:21:00 - let thing = inputFile |> parseFile
+2018-01-17 15:21:00 - thing
+2018-01-17 15:21:00 - This expression was expected to have type
+2018-01-17 15:21:00 -     'string'    
+2018-01-17 15:21:00 - but here has type
+2018-01-17 15:21:00 -     'string []'    
+2018-01-17 15:21:28 - // Getting the necessary libraries
+2018-01-17 15:21:28 - open System.IO
+2018-01-17 15:21:28 - open System
+2018-01-17 15:21:28 - // Getting the raw data
+2018-01-17 15:21:28 - let inputFile = "problem4.txt"
+2018-01-17 15:21:28 - // let parseFile input = 
+2018-01-17 15:21:28 - //     File.ReadAllText(input)
+2018-01-17 15:21:28 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:21:28 - let parseFile (input: string) : string[] = 
+2018-01-17 15:21:28 -     File.ReadAllLines(input)
+2018-01-17 15:21:28 -         |> Array.map (fun x -> x)
+2018-01-17 15:21:28 -     
+2018-01-17 15:21:28 - let duplicates (original: string[]) = None
+2018-01-17 15:21:28 -     
+2018-01-17 15:21:28 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:21:28 - //     let initialData = 
+2018-01-17 15:21:28 - //         inputFile
+2018-01-17 15:21:28 - //             |> parseFile
+2018-01-17 15:21:28 -     
+2018-01-17 15:21:28 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:21:28 -     
+2018-01-17 15:21:28 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:21:28 -         
+2018-01-17 15:21:28 - let thing = inputFile |> parseFile
+2018-01-17 15:21:28 - thing
+2018-01-17 15:22:05 - // Getting the necessary libraries
+2018-01-17 15:22:05 - open System.IO
+2018-01-17 15:22:05 - open System
+2018-01-17 15:22:05 - // Getting the raw data
+2018-01-17 15:22:05 - let inputFile = "problem4.txt"
+2018-01-17 15:22:05 - // let parseFile input = 
+2018-01-17 15:22:05 - //     File.ReadAllText(input)
+2018-01-17 15:22:05 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:22:05 - let parseFile (input: string) : string[] = 
+2018-01-17 15:22:05 -     File.ReadAllLines(input)
+2018-01-17 15:22:05 -         |> Array.map (fun x -> x)
+2018-01-17 15:22:05 -     
+2018-01-17 15:22:05 - let duplicates (original: string[]) = None
+2018-01-17 15:22:05 -     
+2018-01-17 15:22:05 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:22:05 - //     let initialData = 
+2018-01-17 15:22:05 - //         inputFile
+2018-01-17 15:22:05 - //             |> parseFile
+2018-01-17 15:22:05 -     
+2018-01-17 15:22:05 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:22:05 -     
+2018-01-17 15:22:05 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:22:05 -         
+2018-01-17 15:22:05 - let thing = inputFile |> parseFile
+2018-01-17 15:22:05 - thing.GetType(), thing
+2018-01-17 15:22:31 - // Getting the necessary libraries
+2018-01-17 15:22:31 - open System.IO
+2018-01-17 15:22:31 - open System
+2018-01-17 15:22:31 - // Getting the raw data
+2018-01-17 15:22:31 - let inputFile = "problem4.txt"
+2018-01-17 15:22:31 - // let parseFile input = 
+2018-01-17 15:22:31 - //     File.ReadAllText(input)
+2018-01-17 15:22:31 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:22:31 - let parseFile (input: string) : string[] = 
+2018-01-17 15:22:31 -     File.ReadAllLines(input)
+2018-01-17 15:22:31 -         |> Seqap (fun x -> x)
+2018-01-17 15:22:31 -     
+2018-01-17 15:22:31 - let duplicates (original: string[]) = None
+2018-01-17 15:22:31 -     
+2018-01-17 15:22:31 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:22:31 - //     let initialData = 
+2018-01-17 15:22:31 - //         inputFile
+2018-01-17 15:22:31 - //             |> parseFile
+2018-01-17 15:22:31 -     
+2018-01-17 15:22:31 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:22:31 -     
+2018-01-17 15:22:31 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:22:31 -         
+2018-01-17 15:22:31 - let thing = inputFile |> parseFile
+2018-01-17 15:22:31 - thing.GetType(), thing
+2018-01-17 15:22:31 - The value or constructor 'Seqap' is not defined. Maybe you want one of the following:
+2018-01-17 15:22:31 -    Seq
+2018-01-17 15:22:31 -    seq
+2018-01-17 15:22:48 - // Getting the necessary libraries
+2018-01-17 15:22:48 - open System.IO
+2018-01-17 15:22:48 - open System
+2018-01-17 15:22:48 - // Getting the raw data
+2018-01-17 15:22:48 - let inputFile = "problem4.txt"
+2018-01-17 15:22:48 - // let parseFile input = 
+2018-01-17 15:22:48 - //     File.ReadAllText(input)
+2018-01-17 15:22:48 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:22:48 - let parseFile (input: string) : string[] = 
+2018-01-17 15:22:48 -     File.ReadAllLines(input)
+2018-01-17 15:22:48 -         |> Seq.map (fun x -> x)
+2018-01-17 15:22:48 -     
+2018-01-17 15:22:48 - let duplicates (original: string[]) = None
+2018-01-17 15:22:48 -     
+2018-01-17 15:22:48 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:22:48 - //     let initialData = 
+2018-01-17 15:22:48 - //         inputFile
+2018-01-17 15:22:48 - //             |> parseFile
+2018-01-17 15:22:48 -     
+2018-01-17 15:22:48 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:22:48 -     
+2018-01-17 15:22:48 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:22:48 -         
+2018-01-17 15:22:48 - let thing = inputFile |> parseFile
+2018-01-17 15:22:48 - thing.GetType(), thing
+2018-01-17 15:22:48 - Type mismatch. Expecting a
+2018-01-17 15:22:48 -     'string [] -> string []'    
+2018-01-17 15:22:48 - but given a
+2018-01-17 15:22:48 -     'string [] -> seq<string>'    
+2018-01-17 15:22:48 - The type 'string []' does not match the type 'seq<string>'
+2018-01-17 15:22:48 - Type mismatch. Expecting a
+2018-01-17 15:22:48 -     'string [] -> string []'    
+2018-01-17 15:22:48 - but given a
+2018-01-17 15:22:48 -     'string [] -> seq<string>'    
+2018-01-17 15:22:48 - The type 'string []' does not match the type 'seq<string>'
+2018-01-17 15:25:26 - // Getting the necessary libraries
+2018-01-17 15:25:26 - open System.IO
+2018-01-17 15:25:26 - open System
+2018-01-17 15:25:26 - // Getting the raw data
+2018-01-17 15:25:26 - let inputFile = "problem4.txt"
+2018-01-17 15:25:26 - // let parseFile input = 
+2018-01-17 15:25:26 - //     File.ReadAllText(input)
+2018-01-17 15:25:26 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:25:26 - let parseFile (input: string) : string[] = 
+2018-01-17 15:25:26 -     File.ReadAllLines(input)
+2018-01-17 15:25:26 -         |> Array.toSeq
+2018-01-17 15:25:26 -     
+2018-01-17 15:25:26 -     
+2018-01-17 15:25:26 -         
+2018-01-17 15:25:26 -     
+2018-01-17 15:25:26 - let duplicates (original: string[]) = None
+2018-01-17 15:25:26 -     
+2018-01-17 15:25:26 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:25:26 - //     let initialData = 
+2018-01-17 15:25:26 - //         inputFile
+2018-01-17 15:25:26 - //             |> parseFile
+2018-01-17 15:25:26 -     
+2018-01-17 15:25:26 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:25:26 -     
+2018-01-17 15:25:26 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:25:26 -         
+2018-01-17 15:25:26 - let thing = inputFile |> parseFile
+2018-01-17 15:25:26 - thing.GetType(), thing
+2018-01-17 15:25:26 - Type mismatch. Expecting a
+2018-01-17 15:25:26 -     'string [] -> string []'    
+2018-01-17 15:25:26 - but given a
+2018-01-17 15:25:26 -     'string [] -> seq<string>'    
+2018-01-17 15:25:26 - The type 'string []' does not match the type 'seq<string>'
+2018-01-17 15:25:35 - // Getting the necessary libraries
+2018-01-17 15:25:35 - open System.IO
+2018-01-17 15:25:35 - open System
+2018-01-17 15:25:35 - // Getting the raw data
+2018-01-17 15:25:35 - let inputFile = "problem4.txt"
+2018-01-17 15:25:35 - // let parseFile input = 
+2018-01-17 15:25:35 - //     File.ReadAllText(input)
+2018-01-17 15:25:35 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:25:35 - let parseFile (input: string) : string[] = 
+2018-01-17 15:25:35 -     File.ReadAllLines(input)
+2018-01-17 15:25:35 -         |> Array.toSeq
+2018-01-17 15:25:35 -     
+2018-01-17 15:25:35 -     
+2018-01-17 15:25:35 -         
+2018-01-17 15:25:35 -     
+2018-01-17 15:25:35 - let duplicates (original: string[]) = None
+2018-01-17 15:25:35 -     
+2018-01-17 15:25:35 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:25:35 - //     let initialData = 
+2018-01-17 15:25:35 - //         inputFile
+2018-01-17 15:25:35 - //             |> parseFile
+2018-01-17 15:25:35 -     
+2018-01-17 15:25:35 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:25:35 -     
+2018-01-17 15:25:35 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:25:35 -         
+2018-01-17 15:25:35 - let thing = inputFile |> parseFile
+2018-01-17 15:25:35 - thing.GetType(), thing
+2018-01-17 15:25:35 - Type mismatch. Expecting a
+2018-01-17 15:25:35 -     'string [] -> string []'    
+2018-01-17 15:25:35 - but given a
+2018-01-17 15:25:35 -     'string [] -> seq<string>'    
+2018-01-17 15:25:35 - The type 'string []' does not match the type 'seq<string>'
+2018-01-17 15:26:37 - // Getting the necessary libraries
+2018-01-17 15:26:37 - open System.IO
+2018-01-17 15:26:37 - open System
+2018-01-17 15:26:37 - // Getting the raw data
+2018-01-17 15:26:37 - let inputFile = "problem4.txt"
+2018-01-17 15:26:37 - // let parseFile input = 
+2018-01-17 15:26:37 - //     File.ReadAllText(input)
+2018-01-17 15:26:37 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:26:37 - let parseFile (input: string)  = 
+2018-01-17 15:26:37 -     File.ReadAllLines(input)
+2018-01-17 15:26:37 -         |> Array.toSeq
+2018-01-17 15:26:37 -     
+2018-01-17 15:26:37 -     
+2018-01-17 15:26:37 -         
+2018-01-17 15:26:37 -     
+2018-01-17 15:26:37 - let duplicates (original: string[]) = None
+2018-01-17 15:26:37 -     
+2018-01-17 15:26:37 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:26:37 - //     let initialData = 
+2018-01-17 15:26:37 - //         inputFile
+2018-01-17 15:26:37 - //             |> parseFile
+2018-01-17 15:26:37 -     
+2018-01-17 15:26:37 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:26:37 -     
+2018-01-17 15:26:37 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:26:37 -         
+2018-01-17 15:26:37 - let thing = inputFile |> parseFile
+2018-01-17 15:26:37 - thing.GetType(), thing
+2018-01-17 15:27:09 - // Getting the necessary libraries
+2018-01-17 15:27:09 - open System.IO
+2018-01-17 15:27:09 - open System
+2018-01-17 15:27:09 - // Getting the raw data
+2018-01-17 15:27:09 - let inputFile = "problem4.txt"
+2018-01-17 15:27:09 - // let parseFile input = 
+2018-01-17 15:27:09 - //     File.ReadAllText(input)
+2018-01-17 15:27:09 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:27:09 - let parseFile (input: string)  = 
+2018-01-17 15:27:09 -     File.ReadAllLines(input)
+2018-01-17 15:27:09 -         |> Array.map (fun x -> x.Split(' '))
+2018-01-17 15:27:09 -     
+2018-01-17 15:27:09 -     
+2018-01-17 15:27:09 -         
+2018-01-17 15:27:09 -     
+2018-01-17 15:27:09 - let duplicates (original: string[]) = None
+2018-01-17 15:27:09 -     
+2018-01-17 15:27:09 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:27:09 - //     let initialData = 
+2018-01-17 15:27:09 - //         inputFile
+2018-01-17 15:27:09 - //             |> parseFile
+2018-01-17 15:27:09 -     
+2018-01-17 15:27:09 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:27:09 -     
+2018-01-17 15:27:09 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:27:09 -         
+2018-01-17 15:27:09 - let thing = inputFile |> parseFile
+2018-01-17 15:27:09 - thing.GetType(), thing
+2018-01-17 15:28:00 - // Getting the necessary libraries
+2018-01-17 15:28:00 - open System.IO
+2018-01-17 15:28:00 - open System
+2018-01-17 15:28:00 - // Getting the raw data
+2018-01-17 15:28:00 - let inputFile = "problem4.txt"
+2018-01-17 15:28:00 - // let parseFile input = 
+2018-01-17 15:28:00 - //     File.ReadAllText(input)
+2018-01-17 15:28:00 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:28:00 - let parseFile (input: string) : String[][]  = 
+2018-01-17 15:28:00 -     File.ReadAllLines(input)
+2018-01-17 15:28:00 -         |> Array.map (fun x -> x.Split(' '))
+2018-01-17 15:28:00 -     
+2018-01-17 15:28:00 -     
+2018-01-17 15:28:00 -         
+2018-01-17 15:28:00 -     
+2018-01-17 15:28:00 - let duplicates (original: string[]) = None
+2018-01-17 15:28:00 -     
+2018-01-17 15:28:00 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:28:00 - //     let initialData = 
+2018-01-17 15:28:00 - //         inputFile
+2018-01-17 15:28:00 - //             |> parseFile
+2018-01-17 15:28:00 -     
+2018-01-17 15:28:00 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:28:00 -     
+2018-01-17 15:28:00 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:28:00 -         
+2018-01-17 15:28:00 - let thing = inputFile |> parseFile
+2018-01-17 15:28:00 - thing.GetType(), thing
+2018-01-17 15:30:50 - // Getting the necessary libraries
+2018-01-17 15:30:50 - open System.IO
+2018-01-17 15:30:50 - open System
+2018-01-17 15:30:50 - // Getting the raw data
+2018-01-17 15:30:50 - let inputFile = "problem4.txt"
+2018-01-17 15:30:50 - // let parseFile input = 
+2018-01-17 15:30:50 - //     File.ReadAllText(input)
+2018-01-17 15:30:50 - //     |> fun x ->  x.Split(' ')
+2018-01-17 15:30:50 - let parseFile (input: string) : String[][]  = 
+2018-01-17 15:30:50 -     File.ReadAllLines(input)
+2018-01-17 15:30:50 -         |> Array.map (fun x -> x.Split(' '))
+2018-01-17 15:30:50 -     
+2018-01-17 15:30:50 -     
+2018-01-17 15:30:50 -         
+2018-01-17 15:30:50 -     
+2018-01-17 15:30:50 - let duplicates (original: string[]) : bool = 
+2018-01-17 15:30:50 -     original
+2018-01-17 15:30:50 -         |> Set.ofArray 
+2018-01-17 15:30:50 -         |> fun setVersion -> Seq.length setVersion = Seq.length original
+2018-01-17 15:30:50 -     
+2018-01-17 15:30:50 - // let advOfCodePart4 (inputFile: string) : bool = 
+2018-01-17 15:30:50 - //     let initialData = 
+2018-01-17 15:30:50 - //         inputFile
+2018-01-17 15:30:50 - //             |> parseFile
+2018-01-17 15:30:50 -     
+2018-01-17 15:30:50 - //     let noDuplicates = Set.ofArray (initialData)
+2018-01-17 15:30:50 -     
+2018-01-17 15:30:50 - //     (Seq.length initialData) = (Seq.length noDuplicates)
+2018-01-17 15:30:50 -         
+2018-01-17 15:30:50 - let thing = inputFile |> parseFile
+2018-01-17 15:30:50 - thing.GetType(), thing
+2018-01-17 15:35:14 - // Getting the necessary libraries
+2018-01-17 15:35:14 - open System.IO
+2018-01-17 15:35:14 - open System
+2018-01-17 15:35:14 - // Getting the raw data
+2018-01-17 15:35:14 - let inputFile = "problem4.txt"
+2018-01-17 15:35:14 - // Turning the raw data into an array of arrays of strings
+2018-01-17 15:35:14 - let parseFile (input: string) : String[][]  = 
+2018-01-17 15:35:14 -     File.ReadAllLines(input)
+2018-01-17 15:35:14 -         |> Array.map (fun x -> x.Split(' '))
+2018-01-17 15:35:14 - // acceots an array and returns true if no duplicates by seeing if original is same length as set 
+2018-01-17 15:35:14 - let noDuplicates (original: string[]) : bool = 
+2018-01-17 15:35:14 -     original
+2018-01-17 15:35:14 -         |> Set.ofArray 
+2018-01-17 15:35:14 -         |> fun setVersion -> Seq.length setVersion = Seq.length original
+2018-01-17 15:35:14 -     
+2018-01-17 15:35:14 - let advOfCodePart4 (inputFile: string) : int = 
+2018-01-17 15:35:14 -     let initialData = inputFile |> parseFile
+2018-01-17 15:35:14 -     
+2018-01-17 15:35:14 -     initialData 
+2018-01-17 15:35:14 -         |> Array.filter noDuplicates
+2018-01-17 15:35:14 -         |> Array.length
+2018-01-17 15:35:32 - // Getting the necessary libraries
+2018-01-17 15:35:32 - open System.IO
+2018-01-17 15:35:32 - open System
+2018-01-17 15:35:32 - // Getting the raw data
+2018-01-17 15:35:32 - let inputFile = "problem4.txt"
+2018-01-17 15:35:32 - // Turning the raw data into an array of arrays of strings
+2018-01-17 15:35:32 - let parseFile (input: string) : String[][]  = 
+2018-01-17 15:35:32 -     File.ReadAllLines(input)
+2018-01-17 15:35:32 -         |> Array.map (fun x -> x.Split(' '))
+2018-01-17 15:35:32 - // acceots an array and returns true if no duplicates by seeing if original is same length as set 
+2018-01-17 15:35:32 - let noDuplicates (original: string[]) : bool = 
+2018-01-17 15:35:32 -     original
+2018-01-17 15:35:32 -         |> Set.ofArray 
+2018-01-17 15:35:32 -         |> fun setVersion -> Seq.length setVersion = Seq.length original
+2018-01-17 15:35:32 -     
+2018-01-17 15:35:32 - let advOfCodePart4 (inputFile: string) : int = 
+2018-01-17 15:35:32 -     let initialData = inputFile |> parseFile
+2018-01-17 15:35:32 -     
+2018-01-17 15:35:32 -     initialData 
+2018-01-17 15:35:32 -         |> Array.filter noDuplicates
+2018-01-17 15:35:32 -         |> Array.length
+2018-01-17 15:35:32 -         
+2018-01-17 15:35:32 - advOfCodePart4 inputFile
+2018-01-17 15:44:46 - let noAnagrams (input: string[]) : bool = 
+2018-01-17 15:44:46 -     input
+2018-01-17 15:44:46 -         |> Array.map (fun word -> word |> Seq.sort |> String.concat)
+2018-01-17 15:44:46 -     
+2018-01-17 15:44:46 - Type mismatch. Expecting a
+2018-01-17 15:44:46 -     'string [] -> bool'    
+2018-01-17 15:44:46 - but given a
+2018-01-17 15:44:46 -     'string [] -> obj []'    
+2018-01-17 15:44:46 - The type 'bool' does not match the type 'obj []'
+2018-01-17 15:44:46 - Type mismatch. Expecting a
+2018-01-17 15:44:46 -     'seq<char> -> obj'    
+2018-01-17 15:44:46 - but given a
+2018-01-17 15:44:46 -     'string -> seq<string> -> string'    
+2018-01-17 15:44:46 - The type 'seq<char>' does not match the type 'string'
+2018-01-17 15:44:46 - Type mismatch. Expecting a
+2018-01-17 15:44:46 -     'string [] -> bool'    
+2018-01-17 15:44:46 - but given a
+2018-01-17 15:44:46 -     'string [] -> obj []'    
+2018-01-17 15:44:46 - The type 'bool' does not match the type 'obj []'
+2018-01-17 15:47:38 - let noAnagrams (input: string[]) : bool = 
+2018-01-17 15:47:38 -     input
+2018-01-17 15:47:38 -         |> Array.map (fun word -> word |> Seq.sort |> String.concat)
+2018-01-17 15:47:38 -         |> fun sortedLetters -> (Seq.length sortedLetters) = ( sortedLetters |> Set.ofArray Seq.length)
+2018-01-17 15:47:38 -     
+2018-01-17 15:47:38 - Type mismatch. Expecting a
+2018-01-17 15:47:38 -     'seq<char> -> obj'    
+2018-01-17 15:47:38 - but given a
+2018-01-17 15:47:38 -     'string -> seq<string> -> string'    
+2018-01-17 15:47:38 - The type 'seq<char>' does not match the type 'string'
+2018-01-17 15:47:38 - This expression was expected to have type
+2018-01-17 15:47:38 -     'obj [] -> int'    
+2018-01-17 15:47:38 - but here has type
+2018-01-17 15:47:38 -     'Set<IComparable>'    
+2018-01-17 15:47:38 - This expression was expected to have type
+2018-01-17 15:47:38 -     'IComparable []'    
+2018-01-17 15:47:38 - but here has type
+2018-01-17 15:47:38 -     'seq<obj> -> int'    
+2018-01-17 15:47:38 - This expression was expected to have type
+2018-01-17 15:47:38 -     'obj [] -> int'    
+2018-01-17 15:47:38 - but here has type
+2018-01-17 15:47:38 -     'Set<IComparable>'    
+2018-01-17 15:53:18 - let noAnagrams (input: string[]) : bool = 
+2018-01-17 15:53:18 -     input
+2018-01-17 15:53:18 -         |> Array.map (fun word -> word |> Seq.sort |> String.concat(''))
+2018-01-17 15:53:18 -         |> fun sortedLetters -> (Seq.length sortedLetters) = ( sortedLetters |> Set.ofArray |> Seq.length)
+2018-01-17 15:53:18 -     
+2018-01-17 15:53:18 - Unexpected quote symbol in expression
+2018-01-17 15:53:18 - Unmatched '('
+2018-01-17 15:53:28 - let noAnagrams (input: string[]) : bool = 
+2018-01-17 15:53:28 -     input
+2018-01-17 15:53:28 -         |> Array.map (fun word -> word |> Seq.sort |> String.concat())
+2018-01-17 15:53:28 -         |> fun sortedLetters -> (Seq.length sortedLetters) = ( sortedLetters |> Set.ofArray |> Seq.length)
+2018-01-17 15:53:28 -     
+2018-01-17 15:53:28 - The type 'string' does not match the type 'char'
+2018-01-17 15:53:28 - This expression was expected to have type
+2018-01-17 15:53:28 -     'string'    
+2018-01-17 15:53:28 - but here has type
+2018-01-17 15:53:28 -     'unit'    
+2018-01-17 15:54:00 - let noAnagrams (input: string[]) : bool = 
+2018-01-17 15:54:00 -     input
+2018-01-17 15:54:00 -         |> Array.map (fun word -> word |> Seq.sort |> String.concat '')
+2018-01-17 15:54:00 -         |> fun sortedLetters -> (Seq.length sortedLetters) = ( sortedLetters |> Set.ofArray |> Seq.length)
+2018-01-17 15:54:00 -     
+2018-01-17 15:54:00 - Unexpected quote symbol in lambda expression. Expected incomplete structured construct at or before this point or other token.
+2018-01-17 15:54:10 - let noAnagrams (input: string[]) : bool = 
+2018-01-17 15:54:10 -     input
+2018-01-17 15:54:10 -         |> Array.map (fun word -> word |> Seq.sort |> String.concat '')
+2018-01-17 15:54:10 -         |> fun sortedLetters -> (Seq.length sortedLetters) = ( sortedLetters |> Set.ofArray |> Seq.length)
+2018-01-17 15:54:10 -     
+2018-01-17 15:54:10 - Unexpected quote symbol in lambda expression. Expected incomplete structured construct at or before this point or other token.
+2018-01-17 15:58:22 - let sortword (word:string) : string = 
+2018-01-17 15:58:22 -         word 
+2018-01-17 15:58:22 -             |> Seq.sort 
+2018-01-17 15:58:22 -             |> String.concat ""
+2018-01-17 15:58:22 - let noAnagrams (input: string[]) : bool = 
+2018-01-17 15:58:22 -     
+2018-01-17 15:58:22 -     
+2018-01-17 15:58:22 -     (Seq.length sortedInput) = ( sortedLetters |> Set.ofArray |> Seq.length)
+2018-01-17 15:58:22 -     
+2018-01-17 15:58:22 - The type 'string' does not match the type 'char'
+2018-01-17 15:58:22 - The value or constructor 'sortedInput' is not defined.
+2018-01-17 15:58:22 - The value or constructor 'sortedLetters' is not defined.
+2018-01-17 16:01:02 - // sort the letters in a string
+2018-01-17 16:01:02 - let sortWord (word:string) : string = 
+2018-01-17 16:01:02 -         word 
+2018-01-17 16:01:02 -             |> Seq.sort
+2018-01-17 16:01:02 -             |> Seq.map string
+2018-01-17 16:01:02 -             |> String.concat ""
+2018-01-17 16:01:02 - let noAnagrams (input: string[]) : bool = 
+2018-01-17 16:01:02 -     let sortedInput = input |> Array.map sortWord
+2018-01-17 16:01:02 -     
+2018-01-17 16:01:02 -     let setSortedInput = sortedInput |> Set.ofArray 
+2018-01-17 16:01:02 -     
+2018-01-17 16:01:02 -     Seq.length sortedInput = Seq.length setSortedInput
+2018-01-17 16:01:02 -     
+2018-01-17 16:03:16 - // sort the letters in a string
+2018-01-17 16:03:16 - let sortWord (word:string) : string = 
+2018-01-17 16:03:16 -         word 
+2018-01-17 16:03:16 -             |> Seq.sort
+2018-01-17 16:03:16 -             |> Seq.map string
+2018-01-17 16:03:16 -             |> String.concat ""
+2018-01-17 16:03:16 - // check if the word has anagrams by comparing the length of the set.
+2018-01-17 16:03:16 - let noAnagrams (input: string[]) : bool = 
+2018-01-17 16:03:16 -     let sortedInput = input |> Array.map sortWord
+2018-01-17 16:03:16 -     let setSortedInput = sortedInput |> Set.ofArray 
+2018-01-17 16:03:16 -     
+2018-01-17 16:03:16 -     Seq.length sortedInput = Seq.length setSortedInput
+2018-01-17 16:03:16 -     
+2018-01-17 16:03:16 - let advOfCode4Part2 (inputFile:string) : int = 
+2018-01-17 16:03:16 -     let initialData = inputFile |> parseFile
+2018-01-17 16:03:16 -     
+2018-01-17 16:03:16 -     initialData 
+2018-01-17 16:03:16 -         |> Array.filter noDuplicates
+2018-01-17 16:03:16 -         |> Array.filter noAnagrams
+2018-01-17 16:03:16 -         |> Array.length
+2018-01-17 16:03:16 -     
+2018-01-17 16:03:16 -     
+2018-01-17 16:04:00 - // sort the letters in a string
+2018-01-17 16:04:00 - let sortWord (word:string) : string = 
+2018-01-17 16:04:00 -         word 
+2018-01-17 16:04:00 -             |> Seq.sort
+2018-01-17 16:04:00 -             |> Seq.map string
+2018-01-17 16:04:00 -             |> String.concat ""
+2018-01-17 16:04:00 - // check if the word has anagrams by comparing the length of the set.
+2018-01-17 16:04:00 - let noAnagrams (input: string[]) : bool = 
+2018-01-17 16:04:00 -     let sortedInput = input |> Array.map sortWord
+2018-01-17 16:04:00 -     let setSortedInput = sortedInput |> Set.ofArray 
+2018-01-17 16:04:00 -     
+2018-01-17 16:04:00 -     Seq.length sortedInput = Seq.length setSortedInput
+2018-01-17 16:04:00 - // Basically the same as part 1 with one more filter. Yay functional programming
+2018-01-17 16:04:00 - let advOfCode4Part2 (inputFile:string) : int = 
+2018-01-17 16:04:00 -     let initialData = inputFile |> parseFile
+2018-01-17 16:04:00 -     
+2018-01-17 16:04:00 -     initialData 
+2018-01-17 16:04:00 -         |> Array.filter noDuplicates
+2018-01-17 16:04:00 -         |> Array.filter noAnagrams
+2018-01-17 16:04:00 -         |> Array.length
+2018-01-17 16:04:00 -     
+2018-01-17 16:04:00 - advOfCode4Part2 inputFile
+2018-01-17 16:07:09 - // Getting the necessary libraries
+2018-01-17 16:07:09 - open System.IO
+2018-01-17 16:07:09 - open System
+2018-01-17 16:07:09 - // Getting the raw data
+2018-01-17 16:07:09 - let inputFile = "problem4.txt"
+2018-01-17 16:07:09 - // Turning the raw data into an array of arrays of strings
+2018-01-17 16:07:09 - let parseFile (input: string) : String[][]  = 
+2018-01-17 16:07:09 -     File.ReadAllLines(input)
+2018-01-17 16:07:09 -         |> Array.map (fun x -> x.Split(' '))
+2018-01-17 16:07:09 - // acceots an array and returns true if no duplicates by seeing if original is same length as set 
+2018-01-17 16:07:09 - let noDuplicates (original: string[]) : bool = 
+2018-01-17 16:07:09 -     original
+2018-01-17 16:07:09 -         |> Set.ofArray 
+2018-01-17 16:07:09 -         |> fun setVersion -> Seq.length setVersion = Seq.length original
+2018-01-17 16:07:09 -     
+2018-01-17 16:07:09 - // filters the array using the noDuplicates function, then counts the remmaining arrays
+2018-01-17 16:07:09 - let advOfCodePart4 (inputFile: string) : int = 
+2018-01-17 16:07:09 -     let initialData = inputFile |> parseFile
+2018-01-17 16:07:09 -     
+2018-01-17 16:07:09 -     initialData 
+2018-01-17 16:07:09 -         |> Array.filter noDuplicates
+2018-01-17 16:07:09 -         |> Array.length
+2018-01-17 16:07:09 -         
+2018-01-17 16:07:09 - advOfCodePart4 inputFile
+2018-01-17 16:07:09 - // sort the letters in a string
+2018-01-17 16:07:09 - let sortWord (word:string) : string = 
+2018-01-17 16:07:09 -         word 
+2018-01-17 16:07:09 -             |> Seq.sort
+2018-01-17 16:07:09 -             |> Seq.map string
+2018-01-17 16:07:09 -             |> String.concat ""
+2018-01-17 16:07:09 - // check if the word has anagrams by comparing the length of the set.
+2018-01-17 16:07:09 - let noAnagrams (input: string[]) : bool = 
+2018-01-17 16:07:09 -     let sortedInput = input |> Array.map sortWord
+2018-01-17 16:07:09 -     let setSortedInput = sortedInput |> Set.ofArray 
+2018-01-17 16:07:09 -     
+2018-01-17 16:07:09 -     Seq.length sortedInput = Seq.length setSortedInput
+2018-01-17 16:07:09 - // Basically the same as part 1 with one more filter. Yay functional programming
+2018-01-17 16:07:09 - let advOfCode4Part2 (inputFile:string) : int = 
+2018-01-17 16:07:09 -     let initialData = inputFile |> parseFile
+2018-01-17 16:07:09 -     
+2018-01-17 16:07:09 -     initialData 
+2018-01-17 16:07:09 -         |> Array.filter noDuplicates
+2018-01-17 16:07:09 -         |> Array.filter noAnagrams
+2018-01-17 16:07:09 -         |> Array.length
+2018-01-17 16:07:09 -     
+2018-01-17 16:07:09 - advOfCode4Part2 inputFile
